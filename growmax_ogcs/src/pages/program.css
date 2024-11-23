@@ -1,0 +1,160 @@
+/* Section styles */
+.programs-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    color: #fff;
+}
+
+
+/* Overlay styles */
+.programs-overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    border-radius: 15px;
+    max-width: 1000px;
+}
+
+/* Grid layout */
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* Program card styles */
+.program-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: #333;
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden; /* Ensures content like images does not overflow the card */
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.program-image {
+    width: 100%;
+    height: auto; /* Keeps the original aspect ratio */
+    max-height: 300px; /* Prevents the image from becoming too tall */
+    object-fit: contain; /* Scales the image to fit without cropping */
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+
+.program-card h3 {
+    font-size: 1.5em;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.program-card p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.program-card button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.program-card button:hover {
+    background-color: #0056b3;
+}
+
+/* Modal styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #333;
+}
+
+.modal-content form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #555;
+}
+
+.modal-content form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-buttons button {
+    flex: 1;
+    margin: 0 5px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 1em;
+}
+
+.modal-buttons button:first-child {
+    background-color: #007bff;
+    color: white;
+}
+
+.modal-buttons button:first-child:hover {
+    background-color: #0056b3;
+}
+
+.modal-buttons button:last-child {
+    background-color: #ddd;
+    color: #333;
+}
+
+.modal-buttons button:last-child:hover {
+    background-color: #bbb;
+}

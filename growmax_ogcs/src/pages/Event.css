@@ -1,0 +1,134 @@
+.event-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: #fff;
+    background-image: url('../assets/About2.jpg'); /* Add your desired background image */
+    min-height: 100vh;
+  }
+  
+  .event-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .event-tabs button {
+    padding: 15px 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid #007bff;
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+  }
+  
+  .event-tabs button.active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .event-tabs button:hover {
+    background-color: #0056b3;
+    color: #fff;
+  }
+  
+  .event-overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 50px;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    margin-bottom: 40px;
+    animation: fadeIn 1s ease;
+  }
+  
+  .event-box {
+    background-color: rgba(136, 183, 228, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 600px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  .event-box:hover {
+    transform: translateY(-10px);
+  }
+  
+  .event-box h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .event-box p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: #555;
+  }
+  
+  .event-box button {
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .event-box button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .event-page {
+      padding: 40px 15px;
+    }
+  
+    .event-tabs button {
+      font-size: 1rem;
+      padding: 10px 20px;
+    }
+  
+    .event-box h2 {
+      font-size: 2rem;
+    }
+  
+    .event-box p {
+      font-size: 1.2rem;
+    }
+  }
+  
+  /* Keyframe Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

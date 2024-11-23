@@ -1,0 +1,44 @@
+.best-selling-books {
+    text-align: center;
+    padding: 40px;
+    background-color: #f5f5f5;
+}
+
+.best-selling-books h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.books-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.book-image {
+    width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.buy-button {
+    background-color: #d4a73e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #b38630;
+}

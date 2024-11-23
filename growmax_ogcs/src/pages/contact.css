@@ -1,0 +1,55 @@
+/* General styling for the contact page */
+.contact-container {
+    font-family: 'Arial', sans-serif;
+    padding: 80px;
+    background: linear-gradient(135deg, #1a73e8, #4285f4);
+    color: #fff;
+    text-align: center;
+}
+
+.contact-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-header p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+/* Layout for contact details */
+.contact-details {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.contact-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ffcc00;
+}
+
+.contact-card p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.contact-card a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+.contact-card a:hover {
+    text-decoration: underline;
+}
