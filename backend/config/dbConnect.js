@@ -1,16 +1,8 @@
-const mongoose = require('mongoose');
+const mongoose= require('mongoose')
+require("dotenv").config();
 
-const connectDB = async () => {
-    try {
-        await mongoose.connect(process.env.MONGODB_URL, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
-        console.log('MongoDB connected successfully');
-    } catch (error) {
-        console.error('Error connecting to MongoDB:', error.message);
-        process.exit(1); // Exit process if connection fails
-    }
-};
+const Connection=mongoose.connect("mongodb+srv://ogconstructionsolution:L2nTcLrtTMRBdLPj@cluster0.6wxkv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 
-module.exports = connectDB;
+module.exports={
+    Connection
+}
