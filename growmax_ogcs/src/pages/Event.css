@@ -131,4 +131,28 @@
       transform: translateY(0);
     }
   }
-  
+  /* Responsive Event Page */
+@media (max-width: 768px) {
+  .event-tabs {
+    flex-wrap: wrap; /* Allow tabs to wrap */
+    gap: 10px;
+  }
+
+  .event-tabs button {
+    font-size: 1rem; /* Reduce button text size */
+    padding: 8px 15px; /* Adjust padding */
+  }
+
+  .event-box {
+    padding: 20px; /* Reduce padding */
+    max-width: 90%; /* Scale box to fit smaller screens */
+  }
+
+  .event-box h2 {
+    font-size: 1.8rem; /* Adjust title size */
+  }
+
+  .event-box p {
+    font-size: 1rem; /* Adjust paragraph size */
+  }
+}

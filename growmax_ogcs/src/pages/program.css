@@ -158,3 +158,23 @@
 .modal-buttons button:last-child:hover {
     background-color: #bbb;
 }
+/* Responsive Programs Section */
+@media (max-width: 768px) {
+    .programs-grid {
+      grid-template-columns: 1fr; /* Single column on small screens */
+      gap: 15px;
+    }
+  
+    .program-card {
+      padding: 15px; /* Reduce card padding */
+    }
+  
+    .program-card h3 {
+      font-size: 1.2em; /* Adjust heading size */
+    }
+  
+    .program-card p {
+      font-size: 0.9em; /* Adjust text size */
+    }
+  }
+  
