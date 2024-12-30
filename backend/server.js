@@ -1,12 +1,16 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const user = require('./router/userRouter');
-const events = require('./router/events');
-const { Connection } = require('./config/dbConnect');
+const { connectDB } = require('./config/dbConnect');
+
+// Import routes
+const userRouter = require('./router/userRouter');
+const eventsRouter = require('./router/events');
+const programsRouter = require('./router/programs');
+const enquiriesRouter = require('./router/enquiries');
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5001;
 
 // Add Content Security Policy to fix CSP violations
 app.use((req, res, next) => {
@@ -18,29 +22,25 @@ app.use((req, res, next) => {
 });
 
 // CORS configuration
-app.use(cors({
-  origin: ['https://growmax.ogcs.co.in'],
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: ['https://growmax.ogcs.co.in/', 'http://localhost:3000'],
+    credentials: true,
+  })
+);
 
 // Middleware
 app.use(bodyParser.json());
 
-// Database connection
-app.listen(PORT, async () => {
-  try {
-    await Connection;
-    console.log('Database connected');
-    console.log(`Server running on port ${PORT}`);
-  } catch (error) {
-    console.error(error);
-  }
-});
-
 // Routes
-app.use('/api/events', events);
-app.use('/api/programs', require('./router/programs'));
-app.use('/api/enquiries', require('./router/enquiries'));
-app.use('/api/user', user);
+app.use('/api/user', userRouter);
+app.use('/api/events', eventsRouter);
+app.use('/api/programs', programsRouter);
+app.use('/api/enquiries', enquiriesRouter);
 
-module.exports = app;
+// Initialize Database and Start Server
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+});

@@ -1,8 +1,17 @@
-const mongoose= require('mongoose')
-require("dotenv").config();
+const mongoose = require('mongoose');
+require('dotenv').config();
 
-const Connection=mongoose.connect("mongodb+srv://ogconstructionsolution:L2nTcLrtTMRBdLPj@cluster0.6wxkv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+const MONGODB_URL = process.env.MONGODB_URL;
 
-module.exports={
-    Connection
+async function connectDB() {
+  try {
+    await mongoose.connect(MONGODB_URL);
+    console.log('Database connected successfully');
+  } catch (error) {
+    console.error('Database connection error:', error.message);
+    console.error('Ensure your IP is whitelisted and credentials are correct.');
+    process.exit(1);
+  }
 }
+
+module.exports = { connectDB };
