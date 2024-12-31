@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 // CORS configuration
 app.use(
   cors({
-    origin: ['https://growmax.ogcs.co.in/', 'http://localhost:3000','http://localhost:3001','http://localhost:3002','http://localhost:3003'],
+    origin: ['https://growmax.ogcs.co.in', 'http://localhost:3000','http://localhost:3001','http://localhost:3002','http://localhost:3003'],
     credentials: true,
   })
 );
