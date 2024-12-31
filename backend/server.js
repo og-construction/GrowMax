@@ -32,6 +32,9 @@ app.use(
 // Middleware
 app.use(bodyParser.json());
 
+app.get("/",(req,res)=>{
+  res.send("growmax backend started")
+})
 // Routes
 app.use('/api/user', userRouter);
 app.use('/api/events', eventsRouter);
