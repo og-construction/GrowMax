@@ -26,6 +26,7 @@ import masteryInInterview from '../assets/masteryinterview.jpeg'
 import aceYouEngineering from '../assets/AceYourEnginnering.jpeg'
 import exclusiveTailored from '../assets/ExclusiveTailored.jpeg'
 import timeManagement from '../assets/timeManagement.jpeg'
+import { baseurl } from './api'
 
 
 const Programs = () => {
@@ -64,7 +65,7 @@ const Programs = () => {
     useEffect(() => {
         const fetchProgram1 = async () => {
             try {
-                const response = await axios.get(`https://growmaxbackend.ogcs.co.in/:5001/api/programs/674019611d6ab1bd1c9c1bc1`);
+                const response = await axios.get(`${baseurl}/api/programs/674019611d6ab1bd1c9c1bc1`);
                 setProgram1({ ...response.data, image: nurturing, text: 'Description for Program 1' });
             } catch (error) {
                 console.error('Error fetching Program 1:', error);
@@ -73,7 +74,7 @@ const Programs = () => {
 
         const fetchProgram2 = async () => {
             try {
-                const response = await axios.get(`https://growmaxbackend.ogcs.co.in/:5001/api/programs/674019a01d6ab1bd1c9c1bc3`);
+                const response = await axios.get(`${baseurl}/api/programs/674019a01d6ab1bd1c9c1bc3`);
                 setProgram2({ ...response.data, image: crafting, text: 'Description for Program 2' });
             } catch (error) {
                 console.error('Error fetching Program 2:', error);
@@ -82,7 +83,7 @@ const Programs = () => {
 
         const fetchProgram3 = async () => {
             try {
-                const response = await axios.get(`https://growmaxbackend.ogcs.co.in/:5001/api/programs/674019e01d6ab1bd1c9c1bc5`);
+                const response = await axios.get(`${baseurl}/api/programs/674019e01d6ab1bd1c9c1bc5`);
                 setProgram3({ ...response.data, image: selfworth, text: 'Description for Program 3' });
             } catch (error) {
                 console.error('Error fetching Program 3:', error);
@@ -90,7 +91,7 @@ const Programs = () => {
         };
         const fetchProgram4 = async () => {
             try {
-                const response = await axios.get(`http://localhost:5001/api/programs/67401a211d6ab1bd1c9c1bc7`);
+                const response = await axios.get(`${baseurl}/api/programs/67401a211d6ab1bd1c9c1bc7`);
                 setProgram4({ ...response.data, image: revitalize, text: 'Description for Program 3' });
             } catch (error) {
                 console.error('Error fetching Program 3:', error);
@@ -101,7 +102,7 @@ const Programs = () => {
 
         const fetchProgram5 = async () => {
             try {
-                const response = await axios.get(`http://localhost:5001/api/programs/67401a441d6ab1bd1c9c1bc9`);
+                const response = await axios.get(`${baseurl}/api/programs/67401a441d6ab1bd1c9c1bc9`);
                 setProgram5({ ...response.data, image: unleashing, text: 'Description for Program 3' });
             } catch (error) {
                 console.error('Error fetching Program 3:', error);
@@ -110,7 +111,7 @@ const Programs = () => {
 
         const fetchProgram6 = async () => {
             try {
-                const response = await axios.get(`http://localhost:5001/api/programs/67401a6c1d6ab1bd1c9c1bcb`);
+                const response = await axios.get(`${baseurl}/api/programs/67401a6c1d6ab1bd1c9c1bcb`);
                 setProgram6({ ...response.data, image: selfImprovement, text: 'Description for Program 3' });
             } catch (error) {
                 console.error('Error fetching Program 3:', error);
@@ -119,7 +120,7 @@ const Programs = () => {
 
         const fetchProgram7 = async () => {
             try {
-                const response = await axios.get(`http://localhost:5001/api/programs/67401a921d6ab1bd1c9c1bcd`);
+                const response = await axios.get(`${baseurl}/api/programs/67401a921d6ab1bd1c9c1bcd`);
                 setProgram7({ ...response.data, image: confidence, text: 'Description for Program 3' });
             } catch (error) {
                 console.error('Error fetching Program 3:', error);
@@ -130,7 +131,7 @@ const Programs = () => {
 
         const fetchProgram8 = async () => {
             try {
-                const response = await axios.get(`http://localhost:5001/api/programs/67401ab11d6ab1bd1c9c1bcf`);
+                const response = await axios.get(`${baseurl}/api/programs/67401ab11d6ab1bd1c9c1bcf`);
                 setProgram8({ ...response.data, image: ignitingSelfMotivation, text: 'Description for Program 3' });
             } catch (error) {
                 console.error('Error fetching Program 3:', error);
@@ -139,7 +140,7 @@ const Programs = () => {
 
         const fetchProgram9 = async () => {
             try {
-                const response = await axios.get(`http://localhost:5001/api/programs/67401ad11d6ab1bd1c9c1bd1`);
+                const response = await axios.get(`${baseurl}/api/programs/67401ad11d6ab1bd1c9c1bd1`);
                 setProgram9({ ...response.data, image: selDescipline, text: 'Description for Program 3' });
             } catch (error) {
                 console.error('Error fetching Program 3:', error);
@@ -148,7 +149,7 @@ const Programs = () => {
 
         const fetchProgram10 = async () => {
             try {
-                const response = await axios.get(`http://localhost:5001/api/programs/67401d321d6ab1bd1c9c1bd3`);
+                const response = await axios.get(`${baseurl}/api/programs/67401d321d6ab1bd1c9c1bd3`);
                 setProgram10({ ...response.data, image: igniteYourSpark, text: 'Description for Program 3' });
             } catch (error) {
                 console.error('Error fetching Program 3:', error);
@@ -157,7 +158,7 @@ const Programs = () => {
 
         const fetchProgram11 = async () => {
             try {
-                const response = await axios.get(`http://localhost:5001/api/programs/67401d5b1d6ab1bd1c9c1bd5`);
+                const response = await axios.get(`${baseurl}/api/programs/67401d5b1d6ab1bd1c9c1bd5`);
                 setProgram11({ ...response.data, image: selfEfficancy, text: 'Description for Program 3' });
             } catch (error) {
                 console.error('Error fetching Program 3:', error);
@@ -167,7 +168,7 @@ const Programs = () => {
 
         const fetchProgram12 = async () => {
             try {
-                const response = await axios.get(`http://localhost:5001/api/programs/67401d791d6ab1bd1c9c1bd7`);
+                const response = await axios.get(`${baseurl}/api/programs/67401d791d6ab1bd1c9c1bd7`);
                 setProgram12({ ...response.data, image: fuelYourInspiration, text: 'Description for Program 3' });
             } catch (error) {
                 console.error('Error fetching Program 3:', error);
@@ -178,7 +179,7 @@ const Programs = () => {
         
         const fetchProgram13 = async () => {
             try {
-                const response = await axios.get(`http://localhost:5001/api/programs/67401d9a1d6ab1bd1c9c1bd9`);
+                const response = await axios.get(`${baseurl}/api/programs/67401d9a1d6ab1bd1c9c1bd9`);
                 setProgram13({ ...response.data, image: selfEsteem, text: 'Description for Program 3' });
             } catch (error) {
                 console.error('Error fetching Program 3:', error);
@@ -188,7 +189,7 @@ const Programs = () => {
 
         const fetchProgram14 = async () => {
             try {
-                const response = await axios.get(`http://localhost:5001/api/programs/67401dcb1d6ab1bd1c9c1bdb`);
+                const response = await axios.get(`${baseurl}/api/programs/67401dcb1d6ab1bd1c9c1bdb`);
                 setProgram14({ ...response.data, image: unleashYourPotential, text: 'Description for Program 3' });
             } catch (error) {
                 console.error('Error fetching Program 3:', error);
@@ -199,7 +200,7 @@ const Programs = () => {
 
         const fetchProgram15 = async () => {
             try {
-                const response = await axios.get(`http://localhost:5001/api/programs/67401dee1d6ab1bd1c9c1bdd`);
+                const response = await axios.get(`${baseurl}/api/programs/67401dee1d6ab1bd1c9c1bdd`);
                 setProgram15({ ...response.data, image: selfAwareness, text: 'Description for Program 3' });
             } catch (error) {
                 console.error('Error fetching Program 3:', error);
@@ -209,7 +210,7 @@ const Programs = () => {
 
         const fetchProgram16 = async () => {
             try {
-                const response = await axios.get(`http://localhost:5001/api/programs/67401e111d6ab1bd1c9c1bdf`);
+                const response = await axios.get(`${baseurl}/api/programs/67401e111d6ab1bd1c9c1bdf`);
                 setProgram16({ ...response.data, image: selfLove, text: 'Description for Program 3' });
             } catch (error) {
                 console.error('Error fetching Program 3:', error);
@@ -220,7 +221,7 @@ const Programs = () => {
 
         const fetchProgram17 = async () => {
             try {
-                const response = await axios.get(`http://localhost:5001/api/programs/67401e3a1d6ab1bd1c9c1be1`);
+                const response = await axios.get(`${baseurl}/api/programs/67401e3a1d6ab1bd1c9c1be1`);
                 setProgram17({ ...response.data, image: selfRealization, text: 'Description for Program 3' });
             } catch (error) {
                 console.error('Error fetching Program 3:', error);
@@ -230,7 +231,7 @@ const Programs = () => {
 
         const fetchProgram18 = async () => {
             try {
-                const response = await axios.get(`http://localhost:5001/api/programs/67401e571d6ab1bd1c9c1be3`);
+                const response = await axios.get(`${baseurl}/api/programs/67401e571d6ab1bd1c9c1be3`);
                 setProgram18({ ...response.data, image: exploringSelf, text: 'Description for Program 3' });
             } catch (error) {
                 console.error('Error fetching Program 3:', error);
@@ -241,7 +242,7 @@ const Programs = () => {
 
         const fetchProgram19 = async () => {
             try {
-                const response = await axios.get(`http://localhost:5001/api/programs/67401e711d6ab1bd1c9c1be5`);
+                const response = await axios.get(`${baseurl}/api/programs/67401e711d6ab1bd1c9c1be5`);
                 setProgram19({ ...response.data, image: growthBuilt, text: 'Description for Program 3' });
             } catch (error) {
                 console.error('Error fetching Program 3:', error);
@@ -250,7 +251,7 @@ const Programs = () => {
 
         const fetchProgram20 = async () => {
             try {
-                const response = await axios.get(`http://localhost:5001/api/programs/67401e901d6ab1bd1c9c1be7`);
+                const response = await axios.get(`${baseurl}/api/programs/67401e901d6ab1bd1c9c1be7`);
                 setProgram20({ ...response.data, image:crafting, text: 'Description for Program 3' });
             } catch (error) {
                 console.error('Error fetching Program 3:', error);
@@ -261,7 +262,7 @@ const Programs = () => {
 
         const fetchProgram21 = async () => {
             try {
-                const response = await axios.get(`http://localhost:5001/api/programs/67401eb91d6ab1bd1c9c1be9`);
+                const response = await axios.get(`${baseurl}/api/programs/67401eb91d6ab1bd1c9c1be9`);
                 setProgram21({ ...response.data,image:timeManagement, text: 'Description for Program 3' });
             } catch (error) {
                 console.error('Error fetching Program 3:', error);
@@ -269,7 +270,7 @@ const Programs = () => {
         };
         const fetchProgram22 = async () => {
             try {
-                const response = await axios.get(`http://localhost:5001/api/programs/67401ed31d6ab1bd1c9c1beb`);
+                const response = await axios.get(`${baseurl}/api/programs/67401ed31d6ab1bd1c9c1beb`);
                 setProgram22({ ...response.data, image: masteryInInterview, text: 'Description for Program 3' });
             } catch (error) {
                 console.error('Error fetching Program 3:', error);
@@ -280,7 +281,7 @@ const Programs = () => {
 
         const fetchProgram23 = async () => {
             try {
-                const response = await axios.get(`http://localhost:5001/api/programs/67401efd1d6ab1bd1c9c1bed`);
+                const response = await axios.get(`${baseurl}/api/programs/67401efd1d6ab1bd1c9c1bed`);
                 setProgram23({ ...response.data, image: aceYouEngineering, text: 'Description for Program 3' });
             } catch (error) {
                 console.error('Error fetching Program 3:', error);
@@ -289,7 +290,7 @@ const Programs = () => {
 
         const fetchProgram24 = async () => {
             try {
-                const response = await axios.get(`http://localhost:5001/api/programs/67401f201d6ab1bd1c9c1bef`);
+                const response = await axios.get(`${baseurl}/api/programs/67401f201d6ab1bd1c9c1bef`);
                 setProgram24({ ...response.data, image: exclusiveTailored, text: 'Description for Program 3' });
             } catch (error) {
                 console.error('Error fetching Program 3:', error);
@@ -354,7 +355,7 @@ const Programs = () => {
     
             console.log("Payload:", payload);
     
-            const response = await axios.post('http://localhost:5001/api/user/register', payload);
+            const response = await axios.post('http://${baseurl}/api/user/register', payload);
 
     
             if (response.status === 201) {
