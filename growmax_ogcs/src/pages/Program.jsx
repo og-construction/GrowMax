@@ -355,7 +355,7 @@ const Programs = () => {
     
             console.log("Payload:", payload);
     
-            const response = await axios.post('http://${baseurl}/api/user/register', payload);
+            const response = await axios.post(`${baseurl}/api/user/register`, payload);
 
     
             if (response.status === 201) {

@@ -10,10 +10,11 @@ const createUser = asyncHandler(async (req, res) => {
     const { name, email, mobile, programName } = req.body;
 
     if (!name || !email || !mobile || !programName) {
+        
         res.status(400);
         throw new Error("All fields are required");
     }
-    
+    console.log("programName",programName)
     // Check if the user already exists
     const existingUser = await User.findOne({ email });
     if (existingUser) {

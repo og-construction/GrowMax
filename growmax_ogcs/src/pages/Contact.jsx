@@ -11,17 +11,19 @@ const Contact = () => {
             <div className="contact-details">
                 <div className="contact-card">
                     <h3>Phone</h3>
-                    <p>📞 +91 9869185299</p>
-                    <p>📞 +91 8591948585</p>
+                    <p>📞 +91 9967621235</p>
+                    <p>📞 +91 9967610135</p>
                 </div>
                 <div className="contact-card">
                     <h3>Email</h3>
                     <p>📧 <a href="mailto:og.constructionsolution@gmail.com">og.constructionsolution@gmail.com</a></p>
-                    <p>📧 <a href="mailto:babaohol@ogcs.co.in">babaohol@ogcs.co.in</a></p>
+                    <p>📧 <a href="mailto:growmax@ogcs.co.in">growmax@ogcs.co.in</a></p>
                 </div>
                 <div className="contact-card">
                     <h3>Website</h3>
                     <p>🌐 <a href="https://www.ogcs.co.in" target="_blank" rel="noopener noreferrer">www.ogcs.co.in</a></p>
+                    <p>🌐 <a href="https://buildpro.ogcs.co.in/" target="_blank" rel="noopener noreferrer">buildpro.ogcs.co.in</a></p>
+
                 </div>
             </div>
         </div>

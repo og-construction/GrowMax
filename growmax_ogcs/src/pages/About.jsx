@@ -12,6 +12,31 @@ import journy from '../assets/journy.jpg'
 const About = () => {
   return (
     <section className="about-bsr" style={{ backgroundImage: `url(${backgroundImage})` }}>
+       {/* About GrowMax Section */}
+       <div className="about-overlay growmax-section">
+        <div className="about-content">
+          <h1>About GrowMax</h1>
+          <h2>"Unlock Your Potential. Build Your Success."</h2>
+          <p>
+            GrowMax is more than a training platform—it’s a gateway to personal and professional transformation.
+            Spearheaded by Baba V. Ohol, a visionary leader with over three decades of experience, GrowMax specializes
+            in equipping individuals and organizations with the tools to thrive in today’s competitive world.
+          </p>
+          <p>
+            At GrowMax, we work with fresh graduates, seasoned professionals, and entrepreneurs alike, helping them:
+            <ul>
+              <li>Gain confidence and clarity in their roles.</li>
+              <li>Develop leadership and technical skills.</li>
+              <li>Enhance workplace safety and operational efficiency.</li>
+              <li>Navigate challenges with innovative and effective solutions.</li>
+            </ul>
+          </p>
+        </div>
+        <div className="about-image">
+          <img src={logo} alt="GrowMax Overview" />
+        </div>
+      </div>
+
       {/* Who is Baba Ohol Section */}
       <div className="about-overlay who-section">
         <div className="about-image">
@@ -49,31 +74,7 @@ const About = () => {
         </div>
       </div>
 
-      {/* About GrowMax Section */}
-      <div className="about-overlay growmax-section">
-        <div className="about-content">
-          <h1>About GrowMax</h1>
-          <h2>"Unlock Your Potential. Build Your Success."</h2>
-          <p>
-            GrowMax is more than a training platform—it’s a gateway to personal and professional transformation.
-            Spearheaded by Baba V. Ohol, a visionary leader with over three decades of experience, GrowMax specializes
-            in equipping individuals and organizations with the tools to thrive in today’s competitive world.
-          </p>
-          <p>
-            At GrowMax, we work with fresh graduates, seasoned professionals, and entrepreneurs alike, helping them:
-            <ul>
-              <li>Gain confidence and clarity in their roles.</li>
-              <li>Develop leadership and technical skills.</li>
-              <li>Enhance workplace safety and operational efficiency.</li>
-              <li>Navigate challenges with innovative and effective solutions.</li>
-            </ul>
-          </p>
-        </div>
-        <div className="about-image">
-          <img src={logo} alt="GrowMax Overview" />
-        </div>
-      </div>
-
+     
       {/* Why Choose GrowMax Section */}
       <div className="about-overlay journey-section">
         <div className="about-content">
