@@ -10,6 +10,10 @@ import Event from './pages/Event';
 import Blogs from './pages/Blogs';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
+import LoginPage from './components/LoginPage';
+import RegisterForm from './components/RegisterForm';
+import Booking from './pages/Booking';
+import ProgramDetail from './pages/ProgramDetail';
 
 function App () {
   return (
@@ -29,8 +33,11 @@ function App () {
         <Route path="/about" element={<About />} />
         <Route path="/programs" element={<Programs />} />
         <Route path="/event" element={<Event />} />
-        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/booking" element={<Booking />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterForm />} />
+        <Route path="/program/:programId" element={<ProgramDetail />} />
       </Routes>
       <Footer />
       </div>

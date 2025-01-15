@@ -1,158 +1,141 @@
 .event-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 20px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    color: #fff;
-    background-image: url('../assets/About2.jpg'); /* Add your desired background image */
-    min-height: 100vh;
-  }
-  
-  .event-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 40px;
-  }
-  
-  .event-tabs button {
-    padding: 15px 30px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 2px solid #007bff;
-    color: #333;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-  }
-  
-  .event-tabs button.active {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
-  .event-tabs button:hover {
-    background-color: #0056b3;
-    color: #fff;
-  }
-  
-  .event-overlay {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 50px;
-    width: 100%;
-    max-width: 800px;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-    margin-bottom: 40px;
-    animation: fadeIn 1s ease;
-  }
-  
-  .event-box {
-    background-color: rgba(136, 183, 228, 0.95);
-    padding: 40px;
-    border-radius: 20px;
-    text-align: center;
-    max-width: 600px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-  }
-  
-  .event-box:hover {
-    transform: translateY(-10px);
-  }
-  
-  .event-box h2 {
-    font-size: 2.8rem;
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .event-box p {
-    font-size: 1.4rem;
-    line-height: 1.8;
-    margin-bottom: 30px;
-    color: #555;
-  }
-  
-  .event-box button {
-    padding: 12px 25px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .event-box button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .event-page {
-      padding: 40px 15px;
-    }
-  
-    .event-tabs button {
-      font-size: 1rem;
-      padding: 10px 20px;
-    }
-  
-    .event-box h2 {
-      font-size: 2rem;
-    }
-  
-    .event-box p {
-      font-size: 1.2rem;
-    }
-  }
-  
-  /* Keyframe Animations */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  /* Responsive Event Page */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background: linear-gradient(to bottom right, #1e3a8a, #2563eb, #3b82f6);
+  min-height: 100vh;
+  color: #fff;
+}
+
+.event-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.event-tabs button {
+  padding: 15px 30px;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.event-tabs button.active {
+  background: linear-gradient(to right, #2563eb, #1e3a8a);
+  color: #fff;
+}
+
+.event-tabs button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.event-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 50px;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 1s ease;
+}
+
+.event-box {
+  background: linear-gradient(to bottom, #ffffff, #f3f4f6);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 600px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.event-box h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #1e3a8a;
+}
+
+.event-box p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.event-box button {
+  padding: 12px 30px;
+  background: linear-gradient(to right, #2563eb, #1e3a8a);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.event-box button:hover {
+  background: linear-gradient(to right, #1e3a8a, #2563eb);
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
+  .event-page {
+    padding: 40px 15px;
+  }
+
   .event-tabs {
-    flex-wrap: wrap; /* Allow tabs to wrap */
+    flex-wrap: wrap;
     gap: 10px;
   }
 
   .event-tabs button {
-    font-size: 1rem; /* Reduce button text size */
-    padding: 8px 15px; /* Adjust padding */
+    font-size: 1rem;
+    padding: 10px 20px;
   }
 
   .event-box {
-    padding: 20px; /* Reduce padding */
-    max-width: 90%; /* Scale box to fit smaller screens */
+    padding: 20px;
+    max-width: 90%;
   }
 
   .event-box h2 {
-    font-size: 1.8rem; /* Adjust title size */
+    font-size: 1.8rem;
   }
 
   .event-box p {
-    font-size: 1rem; /* Adjust paragraph size */
+    font-size: 1rem;
+  }
+}
+
+/* Keyframe Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

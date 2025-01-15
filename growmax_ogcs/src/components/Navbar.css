@@ -121,7 +121,109 @@
 
 .navbar-links {
   gap: 1rem; /* Reduce gap between links */
+}.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  padding: 0.8rem 2rem;
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
 }
+
+.navbar.scrolled {
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+}
+
+.navbar-logo img {
+  height: 60px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+}
+
+.navbar-links li {
+  display: inline-block;
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+.navbar-links a:hover {
+  color: #ffcb05;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar-options {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-options a {
+  padding: 0.5rem 1rem;
+  background-color: #2563eb;
+  color: #fff;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.navbar-options a:hover {
+  background-color: #ffcb05;
+  color: #2563eb;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .navbar-options {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .navbar {
+    padding: 0.5rem 1.5rem;
+  }
+
+  .navbar-links {
+    gap: 1.5rem;
+  }
+
+  .navbar-options {
+    gap: 1rem;
+  }
+}
+
 
 .navbar-options {
   gap: 0.8rem;
