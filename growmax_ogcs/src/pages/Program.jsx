@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './program.css'; // Import the CSS file
 import backgroundImage from '../assets/About2.jpg'; // Import the background image
@@ -8,7 +9,6 @@ import selfworth from '../assets/self-worth.jpeg'
 import revitalize from '../assets/revitalize.jpeg'
 import unleashing from '../assets/unleasing-leadership.jpeg'
 import selfImprovement from '../assets/self-improvement-odyssey.jpeg'
-//
 import confidence from '../assets/Comfidance-buster.jpeg'
 import ignitingSelfMotivation from '../assets/igniting-self-motivation.jpeg'
 import selDescipline from '../assets/self-deciplaned.jpeg'
@@ -57,8 +57,10 @@ const Programs = () => {
     const [selectedProgram, setSelectedProgram] = useState(null); // To track the clicked program
     const [isModalOpen, setIsModalOpen] = useState(false); // For modal visibility
     const [formData, setFormData] = useState({ name: '', mobile: '', email: '' }); // Form state
-
+    const [programs, setPrograms] = useState([]);
     
+
+  
 
     // Add more states for additional programs...
 
@@ -327,6 +329,7 @@ const Programs = () => {
     }, []);
 
     const openModal = (program) => {
+        console.log('Selected Program:', program); // Debugging
         setSelectedProgram(program);
         setIsModalOpen(true);
     };
@@ -385,15 +388,20 @@ const Programs = () => {
                 <p>Explore our various programs designed for growth and success.</p>
                 <div className="programs-grid">
                     {/* Program 1 */}
-                    {program1 && (
-                        <div className="program-card">
+                    {programs.map((program) => (
+                        <div className="program-card" key={program._id}>
                             <img src={program1.image} alt={program1.name} className="program-image" />
                             <h3>{program1.name}</h3>
                             <p>{program1.description}</p>
                             <p>{program1.text}</p>
+                            <button className="program-button">
+                                <Link to={`/program/${program._id}`}>View Details</Link>
+                            </button>
+                           
                             <button onClick={()=> openModal(program1)}> Book Now</button>
+                       
                         </div>
-                    )}
+                    ))}
 
                     {/* Program 2 */}
                     {program2 && (
@@ -402,6 +410,9 @@ const Programs = () => {
                             <h3>{program2.name}</h3>
                             <p>{program2.description}</p>
                             <p>{program2.text}</p>
+                            <button className="program-button">
+                            <Link to={`/program/${selectedProgram?._id}`}>View Details</Link>
+                            </button>
                             <button onClick={()=> openModal(program2)}> Book Now</button>
                         </div>
                     )}
@@ -413,6 +424,9 @@ const Programs = () => {
                             <h3>{program3.name}</h3>
                             <p>{program3.description}</p>
                             <p>{program3.text}</p>
+                            <button className="program-button">
+                            <Link to={`/program/${selectedProgram?._id}`}>View Details</Link>
+                            </button>
                             <button onClick={()=> openModal(program3)}> Book Now</button>
                         </div>
                     )}
@@ -422,6 +436,9 @@ const Programs = () => {
                             <h3>{program4.name}</h3>
                             <p>{program4.description}</p>
                             <p>{program4.text}</p>
+                            <button className="program-button">
+                            <Link to={`/program/${selectedProgram?._id}`}>View Details</Link>
+                            </button>
                             <button onClick={()=> openModal(program4)}> Book Now</button>
                         </div>
                     )}
@@ -536,6 +553,9 @@ const Programs = () => {
                             <img src={program17.image} alt={program17.name} className="program-image"/>
                             <h3>{program17.name}</h3>
                             <p>{program17.description}</p>
+                            <button className="program-button">
+                            <Link to={`/program/${selectedProgram?._id}`}>View Details</Link>
+                            </button>
                             <button onClick={()=> openModal(program17)}> Book Now</button>
                         </div>
                     )}

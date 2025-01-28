@@ -1,79 +1,11 @@
-/* General Styling for Mobile View */
-@media (max-width: 768px) {
-  .about-bsr {
-    padding: 40px 10px; /* Adjust padding for smaller screens */
-  }
-
-  .about-overlay {
-    flex-direction: column; /* Stack content vertically */
-    text-align: center; /* Center-align text */
-    padding: 20px; /* Reduce padding for smaller screens */
-  }
-
-  .about-content {
-    max-width: 100%; /* Use full width */
-    padding: 10px; /* Reduce padding */
-  }
-
-  .about-content h1 {
-    font-size: 2rem; /* Smaller font size */
-    margin-bottom: 15px;
-  }
-
-  .about-content h2 {
-    font-size: 1.5rem; /* Adjust subtitle font size */
-    margin-bottom: 10px;
-  }
-
-  .about-content p {
-    font-size: 1rem; /* Adjust paragraph font size */
-    line-height: 1.5; /* Slightly tighter line spacing */
-  }
-
-  .about-image {
-    margin-top: 20px; /* Add spacing between text and image */
-  }
-
-  .about-image img {
-    max-width: 80%; /* Ensure images are scaled down */
-    height: auto;
-    margin: 0 auto; /* Center align images */
-  }
-}
-
-/* Specific Adjustments for Extra Small Screens */
-@media (max-width: 480px) {
-  .about-content h1 {
-    font-size: 1.8rem; /* Further reduce header size */
-  }
-
-  .about-content h2 {
-    font-size: 1.2rem; /* Adjust subtitle size */
-  }
-
-  .about-content p {
-    font-size: 0.9rem; /* Adjust text size */
-  }
-
-  .about-overlay {
-    padding: 15px; /* Reduce padding further */
-  }
-
-  .about-image img {
-    max-width: 90%; /* Allow images to scale down even more */
-  }
-}
-
-
 .about-bsr {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 60px 20px;
   background-size: cover;
   background-position: center;
-  position: relative;
+  padding: 40px 20px;
   color: #fff;
 }
 
@@ -82,45 +14,44 @@
   align-items: center;
   justify-content: space-between;
   background-color: rgba(0, 0, 0, 0.7);
-  padding: 50px;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
   width: 100%;
   max-width: 1200px;
-  border-radius: 15px;
-  margin-bottom: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-.who-section {
-  flex-direction: row;
-}
-
-.journey-section {
+.about-overlay.reverse {
   flex-direction: row-reverse;
-}
-
-.leader-section {
-  flex-direction: row;
 }
 
 .about-content {
   flex: 1;
   padding: 20px;
-  max-width: 600px;
 }
 
 .about-content h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 
 .about-content h2 {
   font-size: 2rem;
-  margin-bottom: 15px;
-  font-style: italic;
+  margin-bottom: 20px;
+  color: #ffd700;
 }
 
 .about-content p {
-  font-size: 1.4rem;
-  line-height: 1.8;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.about-content ul {
+  list-style: disc;
+  margin-left: 20px;
 }
 
 .about-image {
@@ -131,31 +62,43 @@
 }
 
 .about-image img {
-  max-width: 400px;
-  height: auto;
+  max-width: 300px;
   border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
-/* Responsive Styles */
+
+/* Mobile Styling */
 @media (max-width: 768px) {
   .about-overlay {
-    flex-direction: column; /* Stack content vertically on smaller devices */
-    text-align: center; /* Center-align text */
-    padding: 30px;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .about-overlay.reverse {
+    flex-direction: column;
   }
 
   .about-content h1 {
-    font-size: 2.5rem; /* Reduce font size */
+    font-size: 2rem;
+  }
+
+  .about-content p,
+  .about-content ul {
+    font-size: 1rem;
+  }
+
+  .about-image img {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-content h1 {
+    font-size: 1.8rem;
   }
 
   .about-content p {
-    font-size: 1.2rem; /* Adjust text for smaller screens */
+    font-size: 0.9rem;
   }
-  .about-image img {
-    max-width: 300px;
-  }
-
-.about-image img {
-  max-width: 80%; /* Ensure images scale down */
-  height: auto;
-}
 }

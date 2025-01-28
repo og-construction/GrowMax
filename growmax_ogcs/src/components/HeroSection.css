@@ -20,6 +20,16 @@
     }
 }
 
+.gap {
+    height: 50px;   
+    background-color: transparent; 
+}
+.hero-section1{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    
+}
 .hero-section, .second-section {
     height: 100vh;
     background-size: cover;
@@ -30,6 +40,11 @@
     position: relative;
     color: #fff;
 }
+
+.second-section {
+    margin-top: 50px;  
+}
+
 .overlay {
     position: absolute;
     top: 0;
