@@ -1,17 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './About.css';
-import backgroundImage from '../assets/About2.jpg'; // Background image
+// import backgroundImage from '../assets/About2.jpg'; // Background image
 import personImage1 from '../assets/sir2.png'; // Image for Baba V. Ohol
 import softskill from '../assets/softskills.jpg'
 import technical from  '../assets/technical.png'
 import logo from '../assets/growmaxlogo11.png';
 import leader from '../assets/leadersir.jpeg'
 import journy from '../assets/journy.jpg'
-
+import banner1 from "../assets/banner1.jpeg";  
+import banner2 from "../assets/banner2.jpeg"; 
+import Image from "../assets/Image.jpeg";
+import Award from "../assets/Award.jpeg";
+import { Slider } from '@mui/material';
 
 const About = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [banner1, banner2 ,Image , Award]; // Add more images if needed
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 3000); // Change slide every 3 seconds
+    return () => clearInterval(interval);
+  }, [slides.length]);
+
   return (
-    <section className="about-bsr" style={{ backgroundImage: `url(${backgroundImage})` }}>
+    <section className="about-bsr">
+      {/* Top Banner Slider */}
+      <div className="banner-slider">
+        <p>Unlock Your Potential. Build Your Success.</p>
+        {slides.map((slide, index) => (
+          <img
+            key={index}
+            src={slide}
+            alt={`Slide ${index + 1}`}
+            className={`banner-image ${
+              currentSlide === index ? "active" : "inactive"
+            }`}
+          />
+        ))}
+      </div>
+
+  
        {/* About GrowMax Section */}
        <div className="about-overlay growmax-section">
         <div className="about-content">

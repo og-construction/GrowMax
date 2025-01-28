@@ -1,14 +1,25 @@
-import React, { useState } from 'react';
-import { TextField, Button, Box, Typography, Paper, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
+import React, { useState } from "react";
+import bookingImage from "../assets/booking.jpeg";
+import {
+  TextField,
+  Button,
+  Box,
+  Typography,
+  Paper,
+  Select,
+  MenuItem,
+  FormControl,
+  InputLabel,
+} from "@mui/material";
 
 const Booking = () => {
   const [formData, setFormData] = useState({
-    eventType: '',
-    secondField: '',
-    name: '',
-    event: '',
-    attendees: '',
-    location: '',
+    eventType: "",
+    secondField: "",
+    name: "",
+    event: "",
+    attendees: "",
+    location: "",
   });
 
   const handleChange = (e) => {
@@ -21,55 +32,62 @@ const Booking = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Booking submitted successfully!');
+    console.log("Form submitted:", formData);
+    alert("Booking submitted successfully!");
     setFormData({
-      eventType: '',
-      secondField: '',
-      name: '',
-      event: '',
-      attendees: '',
-      location: '',
+      eventType: "",
+      secondField: "",
+      name: "",
+      event: "",
+      attendees: "",
+      location: "",
     });
   };
 
   return (
     <Box
       sx={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        background: 'linear-gradient(to right, #8e44ad, #3498db)',
-        padding: 1,
+        height: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundImage: `url(${bookingImage})`,
+
+          backgroundSize: "cover",  
+          backgroundPosition: "center", 
+          backgroundRepeat: "no-repeat",  
+    padding: 2,
       }}
     >
       <Paper
-        elevation={8}
+        elevation={6}
         sx={{
-          padding: 2,
-          borderRadius: 4,
-          maxWidth: 350,
-          width: '85%',
+          padding: 4,
+          borderRadius: 8,
+          maxWidth: 500,
+          width: "90%",
+          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",  
+          backgroundColor: "rgba(255, 255, 255, 0.9)",  
+          backdropFilter: "blur(5px)",  
         }}
       >
-        <Box textAlign="center" mb={2}>
+        <Box textAlign="center" mb={3}>
           <Typography
-            variant="h6"
+            variant="h5"
             component="h1"
             fontWeight="bold"
-            color="secondary"
+            color="primary"
             gutterBottom
           >
             Book Your Event
           </Typography>
           <Typography variant="body2" color="textSecondary">
-            Fill in the details to book your event.
+            Fill in the details to secure your booking.
           </Typography>
         </Box>
 
         <form onSubmit={handleSubmit}>
-          <FormControl fullWidth margin="dense" required size="small">
+          <FormControl fullWidth margin="normal" required>
             <InputLabel id="event-type-label">Event Type</InputLabel>
             <Select
               labelId="event-type-label"
@@ -86,15 +104,18 @@ const Booking = () => {
 
           {formData.eventType && (
             <TextField
-              label={formData.eventType === 'College' ? 'College/Company Name' : 'Company Name'}
+              label={
+                formData.eventType === "College"
+                  ? "College/Institute Name"
+                  : "Company Name"
+              }
               name="secondField"
               variant="outlined"
               fullWidth
-              margin="dense"
+              margin="normal"
               value={formData.secondField}
               onChange={handleChange}
               required
-              size="small"
             />
           )}
 
@@ -103,59 +124,56 @@ const Booking = () => {
             name="name"
             variant="outlined"
             fullWidth
-            margin="dense"
+            margin="normal"
             value={formData.name}
             onChange={handleChange}
             required
-            size="small"
           />
           <TextField
             label="Event Name"
             name="event"
             variant="outlined"
             fullWidth
-            margin="dense"
+            margin="normal"
             value={formData.event}
             onChange={handleChange}
             required
-            size="small"
           />
           <TextField
             label="Attendees"
             name="attendees"
             variant="outlined"
             fullWidth
-            margin="dense"
+            margin="normal"
             value={formData.attendees}
             onChange={handleChange}
             required
-            size="small"
           />
           <TextField
             label="Location"
             name="location"
             variant="outlined"
             fullWidth
-            margin="dense"
+            margin="normal"
             value={formData.location}
             onChange={handleChange}
             required
-            size="small"
           />
 
           <Button
             type="submit"
             variant="contained"
-            color="secondary"
             fullWidth
             sx={{
-              mt: 2,
-              py: 0.8,
-              textTransform: 'none',
-              fontWeight: 'bold',
-              background: 'linear-gradient(to right, #e74c3c, #f1c40f)',
-              ':hover': {
-                background: 'linear-gradient(to right, #c0392b, #d4ac0d)',
+              mt: 3,
+              py: 1.5,
+              fontSize: "1rem",
+              fontWeight: "bold",
+              textTransform: "none",
+              background: "linear-gradient(to right, #6a11cb, #2575fc)", // Button gradient
+              color: "#fff",
+              ":hover": {
+                background: "linear-gradient(to right, #4c8bf5, #375cdc)",
               },
             }}
           >

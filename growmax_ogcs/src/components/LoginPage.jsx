@@ -1,8 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { TextField, Button, Checkbox, FormControlLabel, Box, Typography, Paper } from '@mui/material';
+import axios from 'axios';
 
 const LoginPage = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post('http://localhost:5000/login', {
+        username,
+        password,
+      });
+      console.log('Token:', response.data.token); // Handle token storage
+    } catch (err) {
+      setError(err.response?.data?.message || 'An error occurred');
+    }
+  };
+
   return (
     <Box
       sx={{
@@ -33,21 +52,23 @@ const LoginPage = () => {
             color="primary"
             gutterBottom
           >
-            Welcome Back!
+            Login
           </Typography>
           <Typography variant="body1" color="textSecondary">
-            Login to continue your journey
+            Please enter your credentials to log in
           </Typography>
         </Box>
 
         {/* Form Section */}
-        <form>
+        <form onSubmit={handleLogin}>
           <TextField
             label="Username"
             variant="outlined"
             fullWidth
             margin="normal"
             required
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
           <TextField
             label="Password"
@@ -56,18 +77,18 @@ const LoginPage = () => {
             fullWidth
             margin="normal"
             required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
 
-          <Box
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-            mt={2}
-          >
-            <FormControlLabel
-              control={<Checkbox color="primary" />}
-              label="Remember me"
-            />
+          {error && (
+            <Typography color="error" variant="body2" sx={{ mt: 1 }}>
+              {error}
+            </Typography>
+          )}
+
+          <Box display="flex" justifyContent="space-between" alignItems="center" mt={2}>
+            <FormControlLabel control={<Checkbox color="primary" />} label="Remember me" />
             <Typography
               variant="body2"
               color="primary"
@@ -79,6 +100,7 @@ const LoginPage = () => {
 
           {/* Login Button */}
           <Button
+            type="submit"
             variant="contained"
             size="large"
             fullWidth

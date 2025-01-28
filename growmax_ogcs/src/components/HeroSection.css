@@ -22,7 +22,7 @@
 
 .gap {
     height: 50px;   
-    background-color: transparent; 
+    /* background-color: transparent;  */
 }
 .hero-section1{
     position: relative;
@@ -39,6 +39,7 @@
     justify-content: center;
     position: relative;
     color: #fff;
+    filter: brightness(1.2); 
 }
 
 .second-section {
@@ -51,7 +52,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6);  
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,6 +60,7 @@
     width: 100%;
     height: 100%;
 }
+
 
 .hero-content {
     max-width: 600px;
@@ -76,12 +77,14 @@
 .hero-content h1 {
     font-size: 2rem;
     margin-bottom: 20px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .hero-content p {
     font-size: 1.20rem;
     margin-bottom: 30px;
     line-height: 1.6;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .cta-button {
@@ -107,15 +110,15 @@
 .person-image {
     position: absolute;
     right: 80px;
-    width: 650px;
-    height: auto;
+    width: auto;
+    height:1200px;
     z-index: 1;
     animation: slideInLeft 1s ease-out forwards; 
     animation-delay: 0.3s;
 }
 
 .business-journey-section {
-    background-color: #f8fafc; /* Light background color */
+    background-color: #f8fafc;  
     text-align: center;
     padding: 50px;
     font-family: Arial, sans-serif;
@@ -123,7 +126,7 @@
 
 .business-journey-section h1 {
     font-size: 2.5em;
-    color: #2d1a66; /* Dark blue color */
+    color: #2d1a66;  
     font-weight: bold;
 }
 

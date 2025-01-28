@@ -2,7 +2,7 @@
 import React from 'react';
 import './HeroSection.css';
 import { useNavigate } from 'react-router-dom';
-import backgroundImage from '../assets/background.jpg';
+import backgroundImage from '../assets/background.jpeg';
 import secondImage from '../assets/second.jpg';
 import personImage from '../assets/person.png';
 import Blogs from '../pages/Blogs';
@@ -40,7 +40,7 @@ const handleButtonClick = () => {
                         onClick={handleButtonClick}
                         >Start Your Transformation Now!</button>
                     </div>
-                    <img src={personImage} alt="Person" className="person-image" />
+                    {/* <img src={personImage} alt="Person" className="person-image" /> */}
                 </div>
             </section>
             </div>

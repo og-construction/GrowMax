@@ -15,7 +15,13 @@ const Navbar = () => {
       <ul className="navbar-links">
         <li><Link to="/about">About</Link></li>
         <li><Link to="/programs">Programs</Link></li>
-        <li><Link to="/event">Event</Link></li>
+        <li className="dropdown">
+          <span className="span">Event</span>
+          <ul className="dropdown-menu">
+            <li><Link to="/event/upcoming">Upcoming Events</Link></li>
+            <li><Link to="/event/completedevent">Completed Events</Link></li>
+          </ul>
+        </li>
         <li><Link to="/booking">Book Here</Link></li>
         <li><Link to="/contact">Contact</Link></li>
       </ul>

@@ -1,16 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import {
-  TextField,
-  Button,
-  Checkbox,
-  FormControlLabel,
-  Box,
-  Typography,
-  Paper,
-} from '@mui/material';
+import { TextField, Button, Checkbox, FormControlLabel, Box, Typography, Paper } from '@mui/material';
+import axios from 'axios';
 
-const RegisterForm = () => {
+const RegisterPage = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    mobile: '',
+    programName: '',
+  });
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:5000/register', formData);
+      setSuccess(response.data.message);
+      setError('');
+    } catch (err) {
+      setError(err.response?.data?.message || 'Something went wrong');
+      setSuccess('');
+    }
+  };
+
   return (
     <Box
       sx={{
@@ -18,142 +37,121 @@ const RegisterForm = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        background: 'linear-gradient(to right, #ff7e5f, #feb47b)',
-        padding: 1, // Reduced padding for the container
+        background: 'linear-gradient(135deg, #f8f9fa, #e9ecef)',
+        padding: 2,
       }}
     >
       <Paper
-        elevation={8}
+        elevation={12}
         sx={{
-          padding: 2, // Reduced padding for the form
-          borderRadius: 4,
-          maxWidth: 350, // Reduced maxWidth
+          padding: 4,
+          borderRadius: 10,
+          maxWidth: 400,
           width: '90%',
+          boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.1)',
         }}
       >
-        {/* Logo or Welcome Section */}
-        <Box textAlign="center" mb={2}>
-          <div
-            style={{
-              background: 'linear-gradient(to right, #ff7e5f, #feb47b)',
-              width: '40px', // Reduced size
-              height: '40px', // Reduced size
-              borderRadius: '50%',
-              margin: '0 auto',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              boxShadow: '0 3px 6px rgba(0,0,0,0.2)',
-            }}
-          >
-            <i className="fas fa-user-plus" style={{ color: 'white', fontSize: '16px' }}></i>
-          </div>
-          <Typography
-            variant="h6" // Changed from h5 to h6 for smaller size
-            component="h1"
-            fontWeight="bold"
-            color="primary"
-            gutterBottom
-          >
-            Create Your Account
+        <Box textAlign="center" mb={3}>
+          <Typography variant="h4" component="h1" fontWeight="bold" color="primary" gutterBottom>
+            Register
           </Typography>
-          <Typography variant="body2" color="textSecondary" sx={{ fontSize: '0.8rem' }}>
-            Register to get started with us
+          <Typography variant="body2" color="textSecondary">
+            Sign up to unlock the full experience!
           </Typography>
         </Box>
 
-        {/* Form Section */}
-        <form>
+        <form onSubmit={handleRegister}>
           <TextField
             label="Full Name"
+            name="name"
             variant="outlined"
             fullWidth
-            margin="dense" // Reduced margin between fields
-            size="small" // Smaller input size
+            margin="normal"
             required
+            value={formData.name}
+            onChange={handleInputChange}
           />
           <TextField
             label="Email"
+            name="email"
             variant="outlined"
             fullWidth
-            margin="dense"
-            size="small"
+            margin="normal"
             required
+            value={formData.email}
+            onChange={handleInputChange}
           />
           <TextField
-            label="Password"
-            type="password"
+            label="Mobile"
+            name="mobile"
             variant="outlined"
             fullWidth
-            margin="dense"
-            size="small"
+            margin="normal"
             required
+            value={formData.mobile}
+            onChange={handleInputChange}
           />
           <TextField
-            label="Confirm Password"
-            type="password"
+            label="Program Name"
+            name="programName"
             variant="outlined"
             fullWidth
-            margin="dense"
-            size="small"
+            margin="normal"
             required
+            value={formData.programName}
+            onChange={handleInputChange}
           />
 
           <FormControlLabel
             control={<Checkbox color="primary" />}
             label={
-              <Typography
-                variant="body2"
-                color="textSecondary"
-                sx={{ fontSize: '0.8rem' }}
-              >
+              <Typography variant="body2" color="textSecondary">
                 I agree to the{' '}
-                <Typography
-                  component="span"
-                  color="primary"
-                  sx={{ textDecoration: 'underline', cursor: 'pointer' }}
-                >
+                <Typography component="span" color="primary" sx={{ textDecoration: 'underline', cursor: 'pointer' }}>
                   Terms and Conditions
                 </Typography>
               </Typography>
             }
-            sx={{ marginTop: 1 }}
+            sx={{ mt: 2 }}
           />
 
+          {error && (
+            <Typography color="error" variant="body2" sx={{ mt: 2 }}>
+              {error}
+            </Typography>
+          )}
+          {success && (
+            <Typography color="success" variant="body2" sx={{ mt: 2 }}>
+              {success}
+            </Typography>
+          )}
+
           <Button
+            type="submit"
             variant="contained"
-            color="primary"
-            size="medium" // Smaller button size
             fullWidth
             sx={{
-              mt: 2,
-              py: 0.8, // Reduced padding for the button
-              textTransform: 'none',
-              fontSize: '0.85rem',
+              mt: 3,
+              py: 1.5,
+              fontSize: '1rem',
               fontWeight: 'bold',
-              background: 'linear-gradient(to right, #ff7e5f, #feb47b)',
+              textTransform: 'none',
+              background: 'linear-gradient(135deg, #a1c4fd, #c2e9fb)',
+              color: '#fff',
               ':hover': {
-                background: 'linear-gradient(to right, #e76b51, #fdad70)',
+                background: 'linear-gradient(135deg, #91b3f4, #aedcf7)',
               },
             }}
           >
-             <Link to="/login" style={{ textDecoration: 'none' }}>
             Register
-            </Link>
           </Button>
         </form>
 
-        {/* Login Link */}
-        <Box textAlign="center" mt={2}>
-          <Typography variant="body2" sx={{ fontSize: '0.8rem' }}>
+        <Box textAlign="center" mt={3}>
+          <Typography variant="body2">
             Already have an account?{' '}
             <Link to="/login" style={{ textDecoration: 'none' }}>
-              <Typography
-                component="span"
-                variant="body2"
-                color="primary"
-                sx={{ fontWeight: 'bold', cursor: 'pointer' }}
-              >
+              <Typography component="span" variant="body2" color="primary" sx={{ fontWeight: 'bold', cursor: 'pointer' }}>
                 Login
               </Typography>
             </Link>
@@ -164,4 +162,4 @@ const RegisterForm = () => {
   );
 };
 
-export default RegisterForm;
+export default RegisterPage;
