@@ -1,0 +1,192 @@
+.pageContainer {
+    background: linear-gradient(to bottom right, #7bbad5, #9578c7);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; 
+    margin-top: 80px; 
+    overflow: auto; 
+  }
+  
+  .card {
+    background: #fff;
+    max-width: 700px;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px; /* Reduced padding */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Reduced gap between sections */
+  }
+  
+  .title {
+    font-size: 1.8rem; /* Slightly smaller font size */
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 8px; 
+    padding: 10px 0;
+  }
+  
+  .image {
+    width: 320px; /* Slightly smaller image */
+    height: 220px;
+    max-width: 500px; 
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Reduced gap between text and titles */
+  }
+  
+  .sectionTitle {
+    font-size: 1.3rem; /* Reduced font size */
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 4px; /* Reduced margin */
+  }
+  
+  .text {
+    font-size: 0.95rem; /* Reduced text size slightly */
+    line-height: 1.15; /* Tighter line spacing */
+    color: #666;
+  }
+  
+  .label {
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .errorContainer {
+    background: linear-gradient(to right, #f43f5e, #f59e0b);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Reduced padding */
+  }
+  
+  .errorText {
+    font-size: 1.8rem; /* Slightly smaller text size */
+    font-weight: bold;
+    color: white;
+  }
+  
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+    gap: 5px; /* Reduced gap between buttons */
+  }
+  
+  .enrollButton , .joinButton  {
+    background: linear-gradient(to right, #34d399, #10b981);
+    color: white;
+    font-weight: bold;
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+  }
+  
+  .enrollButton:hover {
+    transform: scale(1.03);
+    background: #059669;
+  }
+
+  .joinButton {
+    background: #5a4fcf;
+    color: white;
+  }
+  
+  .contactButton {
+    background: linear-gradient(to right, #6b7280, #4b5563);
+    color: white;
+    font-weight: bold;
+    padding: 6px 12px; /* Reduced padding for consistency */
+    border: none;
+    border-radius: 6px; /* Slightly smaller radius */
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+  }
+  
+  .contactButton:hover {
+    transform: scale(1.03);
+    background: #374151;
+  }
+
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+  }
+  
+  .modalTitle {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .formActions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .submitButton {
+    flex: 1;
+    padding: 10px;
+    background: #4c6ef5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cancelButton {
+    flex: 1;
+    padding: 10px;
+    background: #ccc;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+     
