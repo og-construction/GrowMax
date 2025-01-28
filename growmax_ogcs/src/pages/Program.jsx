@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './program.css'; // Import the CSS file
 import backgroundImage from '../assets/About2.jpg'; // Import the background image
+import { useNavigate } from 'react-router-dom';
 import nurturing from '../assets/nurturing.jpeg'
 import crafting from '../assets/crafting.jpeg'
 import selfworth from '../assets/self-worth.jpeg'
@@ -58,7 +59,8 @@ const Programs = () => {
     const [isModalOpen, setIsModalOpen] = useState(false); // For modal visibility
     const [formData, setFormData] = useState({ name: '', mobile: '', email: '' }); // Form state
     const [programs, setPrograms] = useState([]);
-    
+    const navigate = useNavigate();
+
 
   
 
@@ -341,6 +343,126 @@ const Programs = () => {
     };
 
 
+    const handleViewDetailsForProgram1 = () => {
+        // Navigate to ProgramDetails only for Program 1
+        navigate(`/program-details`, { state: { program: program1 } });
+      };
+
+      const handleViewDetailsForProgram2 = () => {
+        // Navigate to ProgramDetails only for Program 1
+        navigate(`/program2`, { state: { program: program2 } });
+      };
+
+      const handleViewDetailsForProgram3 = () => {
+        // Navigate to ProgramDetails only for Program 1
+        navigate(`/program3`, { state: { program: program3 } });
+      };
+      
+      const handleViewDetailsForProgram4 = () => {
+        // Navigate to ProgramDetails only for Program 1
+        navigate(`/program4`, { state: { program: program4 } });
+      };
+      
+      const handleViewDetailsForProgram5 = () => {
+        // Navigate to ProgramDetails only for Program 1
+        navigate(`/program5`, { state: { program: program5 } });
+      };
+
+      const handleViewDetailsForProgram6 = () => {
+        // Navigate to ProgramDetails only for Program 1
+        navigate(`/program6`, { state: { program: program6 } });
+      };
+      
+      const handleViewDetailsForProgram7 = () => {
+        // Navigate to ProgramDetails only for Program 1
+        navigate(`/program7`, { state: { program: program7 } });
+      };
+      
+      const handleViewDetailsForProgram8 = () => {
+        // Navigate to ProgramDetails only for Program 1
+        navigate(`/program8`, { state: { program: program8 } });
+      };
+
+      const handleViewDetailsForProgram9 = () => {
+        // Navigate to ProgramDetails only for Program 1
+        navigate(`/program9`, { state: { program: program9 } });
+      };
+
+      const handleViewDetailsForProgram10 = () => {
+        // Navigate to ProgramDetails only for Program 1
+        navigate(`/program10`, { state: { program: program10 } });
+      };
+
+      const handleViewDetailsForProgram11 = () => {
+        // Navigate to ProgramDetails only for Program 1
+        navigate(`/program11`, { state: { program: program11 } });
+      };
+
+      const handleViewDetailsForProgram12 = () => {
+        // Navigate to ProgramDetails only for Program 1
+        navigate(`/program12`, { state: { program: program12 } });
+      };
+
+      const handleViewDetailsForProgram13 = () => {
+        // Navigate to ProgramDetails only for Program 1
+        navigate(`/program13`, { state: { program: program13 } });
+      };
+
+      const handleViewDetailsForProgram14 = () => {
+        // Navigate to ProgramDetails only for Program 1
+        navigate(`/program14`, { state: { program: program14 } });
+      };
+
+      const handleViewDetailsForProgram15 = () => {
+        // Navigate to ProgramDetails only for Program 1
+        navigate(`/program15`, { state: { program: program15 } });
+      };
+
+      const handleViewDetailsForProgram16 = () => {
+        // Navigate to ProgramDetails only for Program 1
+        navigate(`/program16`, { state: { program: program16 } });
+      };
+
+      const handleViewDetailsForProgram17 = () => {
+        // Navigate to ProgramDetails only for Program 1
+        navigate(`/program17`, { state: { program: program17 } });
+      };
+
+      const handleViewDetailsForProgram18 = () => {
+        // Navigate to ProgramDetails only for Program 1
+        navigate(`/program18`, { state: { program: program18 } });
+      };
+
+      const handleViewDetailsForProgram19 = () => {
+        // Navigate to ProgramDetails only for Program 1
+        navigate(`/program19`, { state: { program: program19 } });
+      };
+
+      const handleViewDetailsForProgram20 = () => {
+        // Navigate to ProgramDetails only for Program 1
+        navigate(`/program20`, { state: { program: program20 } });
+      };
+
+      const handleViewDetailsForProgram21 = () => {
+        // Navigate to ProgramDetails only for Program 1
+        navigate(`/program21`, { state: { program: program21 } });
+      };
+
+      const handleViewDetailsForProgram22 = () => {
+        // Navigate to ProgramDetails only for Program 1
+        navigate(`/program22`, { state: { program: program22 } });
+      };
+
+      const handleViewDetailsForProgram23 = () => {
+        // Navigate to ProgramDetails only for Program 1
+        navigate(`/program23`, { state: { program: program23 } });
+      };
+
+      const handleViewDetailsForProgram24 = () => {
+        // Navigate to ProgramDetails only for Program 1
+        navigate(`/program24`, { state: { program: program24 } });
+      };
+      
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -387,35 +509,40 @@ const Programs = () => {
                 <h1>Our Programs</h1>
                 <p>Explore our various programs designed for growth and success.</p>
                 <div className="programs-grid">
-                    {/* Program 1 */}
-                    {programs.map((program) => (
-                        <div className="program-card" key={program._id}>
-                            <img src={program1.image} alt={program1.name} className="program-image" />
-                            <h3>{program1.name}</h3>
-                            <p>{program1.description}</p>
-                            <p>{program1.text}</p>
-                            <button className="program-button">
-                                <Link to={`/program/${program._id}`}>View Details</Link>
-                            </button>
-                           
-                            <button onClick={()=> openModal(program1)}> Book Now</button>
-                       
-                        </div>
-                    ))}
 
-                    {/* Program 2 */}
-                    {program2 && (
-                        <div className="program-card">
-                            <img src={program2.image} alt={program2.name} className="program-image" />
-                            <h3>{program2.name}</h3>
-                            <p>{program2.description}</p>
-                            <p>{program2.text}</p>
-                            <button className="program-button">
-                            <Link to={`/program/${selectedProgram?._id}`}>View Details</Link>
-                            </button>
-                            <button onClick={()=> openModal(program2)}> Book Now</button>
-                        </div>
-                    )}
+                {program1 && (
+        <div className="program-card">
+          <img src={program1.image} alt={program1.name} className="program-image" />
+          <h3>{program1.name}</h3>
+          <p>{program1.description}</p>
+          <button
+            className="program-button"
+            onClick={handleViewDetailsForProgram1} // Only Program 1 navigates to ProgramDetails
+          >
+            View Details
+          </button>
+        </div>
+      )}
+
+
+
+                  {/* Program 2 */}
+{program2 && (
+  <div className="program-card">
+    <img src={program2.image} alt={program2.name} className="program-image" />
+    <h3>{program2.name}</h3>
+    <p>{program2.description}</p>
+    <p>{program2.text}</p>
+    <button
+            className="program-button"
+            onClick={handleViewDetailsForProgram2} // Only Program 1 navigates to ProgramDetails
+          >
+            View Details
+          </button>
+    <button onClick={() => openModal(program2)}>Book Now</button>
+  </div>
+)}
+
 
                     {/* Program 3 */}
                     {program3 && (
@@ -424,10 +551,12 @@ const Programs = () => {
                             <h3>{program3.name}</h3>
                             <p>{program3.description}</p>
                             <p>{program3.text}</p>
-                            <button className="program-button">
-                            <Link to={`/program/${selectedProgram?._id}`}>View Details</Link>
-                            </button>
-                            <button onClick={()=> openModal(program3)}> Book Now</button>
+                            <button
+                            className="program-button"
+                            onClick={handleViewDetailsForProgram3} // Only Program 1 navigates to ProgramDetails
+                        >
+                            View Details
+                        </button>
                         </div>
                     )}
                 {program4 && (
@@ -436,10 +565,12 @@ const Programs = () => {
                             <h3>{program4.name}</h3>
                             <p>{program4.description}</p>
                             <p>{program4.text}</p>
-                            <button className="program-button">
-                            <Link to={`/program/${selectedProgram?._id}`}>View Details</Link>
-                            </button>
-                            <button onClick={()=> openModal(program4)}> Book Now</button>
+                            <button
+                            className="program-button"
+                            onClick={handleViewDetailsForProgram4} // Only Program 1 navigates to ProgramDetails
+                        >
+                            View Details
+                        </button>
                         </div>
                     )}
                      {program5 && (
@@ -448,7 +579,12 @@ const Programs = () => {
                             <h3>{program5.name}</h3>
                             <p>{program5.description}</p>
                             <p>{program5.text}</p>
-                            <button onClick={()=> openModal(program5)}> Book Now</button>
+                            <button
+                            className="program-button"
+                            onClick={handleViewDetailsForProgram5} // Only Program 1 navigates to ProgramDetails
+                        >
+                            View Details
+                        </button>
                         </div>
                     )}
 
@@ -458,7 +594,12 @@ const Programs = () => {
                             <h3>{program6.name}</h3>
                             <p>{program6.description}</p>
                             <p>{program6.text}</p>
-                            <button onClick={()=> openModal(program6)}> Book Now</button>
+                            <button
+                            className="program-button"
+                            onClick={handleViewDetailsForProgram6} // Only Program 1 navigates to ProgramDetails
+                        >
+                            View Details
+                        </button>
                         </div>
                     )}
                     
@@ -468,7 +609,12 @@ const Programs = () => {
                             <h3>{program7.name}</h3>
                             <p>{program7.description}</p>
                             <p>{program7.text}</p>
-                            <button onClick={()=> openModal(program7)}> Book Now</button>
+                            <button
+                            className="program-button"
+                            onClick={handleViewDetailsForProgram7} // Only Program 1 navigates to ProgramDetails
+                        >
+                            View Details
+                        </button>
                         </div>
                     )}
                     {program8 && (
@@ -477,7 +623,12 @@ const Programs = () => {
                             <h3>{program8.name}</h3>
                             <p>{program8.description}</p>
                             <p>{program8.text}</p>
-                            <button onClick={()=> openModal(program8)}> Book Now</button>
+                            <button
+                            className="program-button"
+                            onClick={handleViewDetailsForProgram8} // Only Program 1 navigates to ProgramDetails
+                        >
+                            View Details
+                        </button>
                         </div>
                     )}
                     {program9 && (
@@ -486,7 +637,12 @@ const Programs = () => {
                             <h3>{program9.name}</h3>
                             <p>{program9.description}</p>
                             <p>{program9.text}</p>
-                            <button onClick={()=> openModal(program9)}> Book Now</button>
+                            <button
+                            className="program-button"
+                            onClick={handleViewDetailsForProgram9} // Only Program 1 navigates to ProgramDetails
+                        >
+                            View Details
+                        </button>
                         </div>
                     )}
                                        {program10 && (
@@ -495,7 +651,12 @@ const Programs = () => {
 
                             <h3>{program10.name}</h3>
                             <p>{program10.description}</p>
-                            <button onClick={()=> openModal(program10)}> Book Now</button>
+                            <button
+                            className="program-button"
+                            onClick={handleViewDetailsForProgram10} // Only Program 1 navigates to ProgramDetails
+                        >
+                            View Details
+                        </button>
                         </div>
                     )}
                       {program11 && (
@@ -503,7 +664,12 @@ const Programs = () => {
                             <img src={program11.image} alt={program11.name} className="program-image"/>
                             <h3>{program11.name}</h3>
                             <p>{program11.description}</p>
-                            <button onClick={()=> openModal(program11)}> Book Now</button>
+                            <button
+                            className="program-button"
+                            onClick={handleViewDetailsForProgram11} // Only Program 1 navigates to ProgramDetails
+                        >
+                            View Details
+                        </button>
                         </div>
                     )}
                      {program12 && (
@@ -511,7 +677,12 @@ const Programs = () => {
                             <img src={program12.image} alt={program12.name} className="program-image"/>
                             <h3>{program12.name}</h3>
                             <p>{program12.description}</p>
-                            <button onClick={()=> openModal(program12)}> Book Now</button>
+                            <button
+                            className="program-button"
+                            onClick={handleViewDetailsForProgram12} // Only Program 1 navigates to ProgramDetails
+                        >
+                            View Details
+                        </button>
                         </div>
                     )}
                     {program13 && (
@@ -519,7 +690,12 @@ const Programs = () => {
                             <img src={program13.image} alt={program13.name} className="program-image"/>
                             <h3>{program13.name}</h3>
                             <p>{program13.description}</p>
-                            <button onClick={()=> openModal(program13)}> Book Now</button>
+                            <button
+                            className="program-button"
+                            onClick={handleViewDetailsForProgram13} // Only Program 1 navigates to ProgramDetails
+                        >
+                            View Details
+                        </button>
                         </div>
                     )}
                     
@@ -529,7 +705,12 @@ const Programs = () => {
 
                             <h3>{program14.name}</h3>
                             <p>{program14.description}</p>
-                            <button onClick={()=> openModal(program14)}> Book Now</button>
+                            <button
+                            className="program-button"
+                            onClick={handleViewDetailsForProgram14} // Only Program 1 navigates to ProgramDetails
+                        >
+                            View Details
+                        </button>
                         </div>
                     )}
                     {program15 && (
@@ -537,7 +718,12 @@ const Programs = () => {
                             <img src={program15.image} alt={program15.name} className="program-image"/>
                             <h3>{program15.name}</h3>
                             <p>{program15.description}</p>
-                            <button onClick={()=> openModal(program15)}> Book Now</button>
+                            <button
+                            className="program-button"
+                            onClick={handleViewDetailsForProgram15} // Only Program 1 navigates to ProgramDetails
+                        >
+                            View Details
+                        </button>
                         </div>
                     )}
                       {program16 && (
@@ -545,7 +731,12 @@ const Programs = () => {
                             <img src={program16.image} alt={program16.name} className="program-image"/>
                             <h3>{program16.name}</h3>
                             <p>{program16.description}</p>
-                            <button onClick={()=> openModal(program16)}> Book Now</button>
+                            <button
+                            className="program-button"
+                            onClick={handleViewDetailsForProgram16} // Only Program 1 navigates to ProgramDetails
+                        >
+                            View Details
+                        </button>
                         </div>
                     )}
                       {program17 && (
@@ -553,10 +744,12 @@ const Programs = () => {
                             <img src={program17.image} alt={program17.name} className="program-image"/>
                             <h3>{program17.name}</h3>
                             <p>{program17.description}</p>
-                            <button className="program-button">
-                            <Link to={`/program/${selectedProgram?._id}`}>View Details</Link>
-                            </button>
-                            <button onClick={()=> openModal(program17)}> Book Now</button>
+                            <button
+                            className="program-button"
+                            onClick={handleViewDetailsForProgram17} // Only Program 1 navigates to ProgramDetails
+                        >
+                            View Details
+                        </button>
                         </div>
                     )}
                      {program18 && (
@@ -564,7 +757,12 @@ const Programs = () => {
                             <img src={program18.image} alt={program18.name} className="program-image"/>
                             <h3>{program18.name}</h3>
                             <p>{program18.description}</p>
-                            <button onClick={()=> openModal(program18)}> Book Now</button>
+                            <button
+                            className="program-button"
+                            onClick={handleViewDetailsForProgram18} // Only Program 1 navigates to ProgramDetails
+                        >
+                            View Details
+                        </button>
                         </div>
                     )}
 
@@ -573,7 +771,12 @@ const Programs = () => {
                             <img src={program19.image} alt={program19.name} className="program-image"/>
                             <h3>{program19.name}</h3>
                             <p>{program19.description}</p>
-                            <button onClick={()=> openModal(program19)}> Book Now</button>
+                            <button
+                            className="program-button"
+                            onClick={handleViewDetailsForProgram19} // Only Program 1 navigates to ProgramDetails
+                        >
+                            View Details
+                        </button>
                         </div>
                     )}
                      {program20 && (
@@ -581,7 +784,12 @@ const Programs = () => {
                             <img src={program20.image} alt={program20.name} className="program-image"/>
                             <h3>{program20.name}</h3>
                             <p>{program20.description}</p>
-                            <button onClick={()=> openModal(program20)}> Book Now</button>
+                            <button
+                            className="program-button"
+                            onClick={handleViewDetailsForProgram20} // Only Program 1 navigates to ProgramDetails
+                        >
+                            View Details
+                        </button>
                         </div>
                     )}
                     {program21 && (
@@ -589,7 +797,12 @@ const Programs = () => {
                             <img src={program21.image} alt={program21.name} className="program-image"/>
                             <h3>{program21.name}</h3>
                             <p>{program21.description}</p>
-                            <button onClick={()=> openModal(program21)}> Book Now</button>
+                            <button
+                            className="program-button"
+                            onClick={handleViewDetailsForProgram21} // Only Program 1 navigates to ProgramDetails
+                        >
+                            View Details
+                        </button>
                         </div>
                     )}
                      {program22 && (
@@ -597,7 +810,12 @@ const Programs = () => {
                             <img src={program22.image} alt={program22.name} className="program-image"/>
                             <h3>{program22.name}</h3>
                             <p>{program22.description}</p>
-                            <button onClick={()=> openModal(program22)}>Book Now</button>
+                            <button
+                            className="program-button"
+                            onClick={handleViewDetailsForProgram22} // Only Program 1 navigates to ProgramDetails
+                        >
+                            View Details
+                        </button>
                         </div>
                     )}
                      {program23 && (
@@ -605,7 +823,12 @@ const Programs = () => {
                             <img src={program23.image} alt={program23.name} className="program-image"/>
                             <h3>{program23.name}</h3>
                             <p>{program23.description}</p>
-                            <button onClick={()=> openModal(program23)}>Book Now</button>
+                            <button
+                            className="program-button"
+                            onClick={handleViewDetailsForProgram23} // Only Program 1 navigates to ProgramDetails
+                        >
+                            View Details
+                        </button>
                         </div>
                     )}
                     {program24 && (
@@ -613,7 +836,12 @@ const Programs = () => {
                             <img src={program24.image} alt={program24.name} className="program-image"/>
                             <h3>{program24.name}</h3>
                             <p>{program24.description}</p>
-                            <button onClick={()=> openModal(program24)}>Book Now</button>
+                            <button
+                            className="program-button"
+                            onClick={handleViewDetailsForProgram24} // Only Program 1 navigates to ProgramDetails
+                        >
+                            View Details
+                        </button>
                         </div>
                     )}
 
