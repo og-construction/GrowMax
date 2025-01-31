@@ -29,9 +29,9 @@ const Navbar = () => {
 
       <div className="navbar-logo">
         <Link to="/">
-          <img src={OGCS_logo} alt="OGCS LOGO" />
+          <img src={OGCS_logo} alt="OGCS Logo" /> {/* Correct variable usage */}
         </Link>
-      </div>
+        </div>
     </nav>
   );
 };

@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import bookingImage from "../assets/booking.jpeg";
+import axios from "axios";
+import { baseurl } from '../api'
+
 import {
   TextField,
   Button,
@@ -30,18 +33,26 @@ const Booking = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Booking submitted successfully!");
-    setFormData({
-      eventType: "",
-      secondField: "",
-      name: "",
-      event: "",
-      attendees: "",
-      location: "",
-    });
+  
+    try {
+      const response = await axios.post(`${baseurl}/api/booking`, formData);
+      if (response.status === 201) {
+        alert('Booking submitted successfully!');
+        setFormData({
+          eventType: "",
+          secondField: "",
+          name: "",
+          event: "",
+          attendees: "",
+          location: "",
+        });
+      }
+    } catch (error) {
+      console.error('Error submitting booking:', error);
+      alert('Failed to submit booking. Please try again.');
+    }
   };
 
   return (
