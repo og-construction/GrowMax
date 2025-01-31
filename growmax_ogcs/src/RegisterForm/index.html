@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        table {
+            background-color: white;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST" name="customerData" id="paymentForm">
+        <table width="50%" align="center">
+            <caption><font size="4" color="blue"><b>Payment Details</b></font></caption>
+            <tr>
+                <td>Parameter Name:</td><td>Parameter Value:</td>
+            </tr>
+            <tr>
+                <td colspan="2"><b>Compulsory information</b></td>
+            </tr>
+            <tr>
+                <td>TID:</td><td><input type="text" name="tid" id="tid" readonly /></td>
+            </tr>
+            <tr>
+                <td>Merchant Id:</td><td><input type="text" name="merchant_id" value="3041682" readonly/></td>
+            </tr>
+            <tr>
+                <td>Order Id:</td><td><input type="text" name="order_id" value="123654789" readonly/></td>
+            </tr>
+            <tr>
+                <td>Amount:</td><td><input type="text" name="amount" value="100.00"/></td>
+            </tr>
+            <tr>
+                <td>Currency:</td><td><input type="text" name="currency" value="INR" readonly/></td>
+            </tr>
+            <tr>
+                <td>Redirect URL:</td><td><input type="text" name="redirect_url" value="http://localhost/ccavResponseHandler.php" readonly/></td>
+            </tr>
+            <tr>
+                <td>Cancel URL:</td><td><input type="text" name="cancel_url" value="http://localhost/ccavResponseHandler.php" readonly/></td>
+            </tr>
+            <tr>
+                <td>Language:</td><td><input type="text" name="language" value="EN" readonly/></td>
+            </tr>
+            <tr>
+                <td colspan="2"><b>Billing information:</b></td>
+            </tr>
+            <tr>
+                <td>Billing Name:</td><td><input type="text" name="billing_name" id="billing_name" required/></td>
+            </tr>
+            <tr>
+                <td>Billing Email:</td><td><input type="email" name="billing_email" id="billing_email" required/></td>
+            </tr>
+            <tr>
+                <td>Billing Tel:</td><td><input type="tel" name="billing_tel" id="billing_tel" required/></td>
+            </tr>
+            <tr>
+                <td colspan="2"><b>Payment information:</b></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="CheckOut"></td>
+            </tr>
+        </table>
+    </form>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            var d = new Date().getTime();
+            document.getElementById("tid").value = d;
+
+            var userData = JSON.parse(localStorage.getItem('userData'));
+            if (userData) {
+                document.getElementById('billing_name').value = userData.name;
+                document.getElementById('billing_email').value = userData.email;
+                document.getElementById('billing_tel').value = userData.phone;
+            }
+        };
+
+        $(function(){
+            $("#paymentForm").submit(function(e) {
+                e.preventDefault();
+                
+                var formData = new FormData(this);
+                var object = {};
+                formData.forEach((value, key) => {object[key] = value});
+                var json = JSON.stringify(object);
+
+                fetch('http://localhost:3000/submit-payment', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: json
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if(data.success) {
+                        alert('Payment data submitted successfully!');
+                        // Redirect to success page or perform other actions here
+                    } else {
+                        alert('Error submitting payment data: ' + data.message);
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    alert('An error occurred while submitting the payment data.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

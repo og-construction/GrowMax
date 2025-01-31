@@ -10,7 +10,6 @@ import Blogs from './pages/Blogs';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import LoginPage from './components/LoginPage';
-import RegisterForm from './components/RegisterForm';
 import Booking from './pages/Booking';
 import ProgramDetail from './pages/ProgramDetail';
 import ProgramDetail3 from './pages/ProgramDetail3';
@@ -36,6 +35,13 @@ import ProgramDetail21 from './pages/ProgramDetail21';
 import ProgramDetail22 from './pages/ProgramDetail22';
 import ProgramDetail23 from './pages/ProgramDetail23';
 import ProgramDetail24 from './pages/ProgramDetail24';
+import Upcomingevent from './events/upcomingevent';   
+import Completedevent from './events/completedevent';  
+import EventDetail from './events/EventDetail';
+import Reviews from './events/Review'; 
+import RegisterPage from './components/RegisterForm';
+import RegisterForm from "./events/RegisterForm";
+
 
 function App() {
   return (
@@ -55,10 +61,14 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/programs" element={<Programs />} />
         <Route path="/event" element={<Event />} />
+        <Route path="/event/completedevent" element={<Completedevent />} />
+        <Route path="/event/upcoming" element={<Upcomingevent />} />
+        <Route path="/event-detail" element={<EventDetail />} /> 
+        <Route path="/registerform" element={<RegisterForm />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterForm />} />
+        <Route path="/register" element={<RegisterPage />} />
         <Route path="/programs" element={<Programs />} />
         <Route path="/program-details" element={<ProgramDetail />} />
         <Route path="/program2" element={<ProgramDetail2 />} />
@@ -84,6 +94,7 @@ function App() {
        <Route path="/program22" element={<ProgramDetail22 />} />
        <Route path="/program23" element={<ProgramDetail23 />} />
        <Route path="/program24" element={<ProgramDetail24 />} />
+       <Route path="/reviews" element={<Reviews/>} /> 
 
 
       </Routes>

@@ -1,16 +1,36 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Navigate, useLocation ,useNavigate,useParams } from 'react-router-dom';
 import axios from 'axios';
 import styles from '../styles/ProgramDetails.module.css';
+import { baseurl } from '../api'
+
 
 const ProgramDetails = () => {
   const location = useLocation();
-  const program = location.state?.program || {}; // Safely access program data
+  const program = location.state?.program || {}; 
+  //const [program, setProgram] = useState({});
+  //const [setProgram]
+  //const navigate = useNavigate();
   const [currentDate, setCurrentDate] = useState('');
   const [currentTime, setCurrentTime] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({ name: '', mobile: '', email: '' });
-  const baseurl = 'https://yourapi.com'; // Replace with your API endpoint
+  //const baseurl = 'https://yourapi.com'; // Replace with your API endpoint
+
+
+  // useEffect(() => {
+  //   const fetchProgramDetails = async () => {
+  //     try {
+  //       const response = await axios.get(`${baseurl}/api/programs/${id}`);
+  //       setProgram(response.data);
+  //     } catch (error) {
+  //       console.error('Error fetching program details:', error);
+  //     }
+  //   };
+
+  //   fetchProgramDetails();
+  // }, [id]);
+
 
   // Set current date and time
   useEffect(() => {
@@ -46,9 +66,19 @@ const ProgramDetails = () => {
       }
     } catch (error) {
       console.error('Error registering for program:', error);
-      alert('An error occurred while registering. Please try again.');
+      alert('User already exists');
     }
   };
+
+  // const handleProgramDetails = async () => {
+
+  //   const programId =localStorage.getItem("programId");
+  //   const response = await axios.get(`${baseurl}/api/program/${programId}`);
+  //   const program = response.data;
+  //   setProgram(program);
+    
+    
+  // }
 
   if (!program.name) {
     return (
@@ -57,6 +87,7 @@ const ProgramDetails = () => {
       </div>
     );
   }
+
 
   return (
     <div className={styles.pageContainer}>
@@ -114,17 +145,17 @@ const ProgramDetails = () => {
 
         {/* Call-to-Action Buttons */}
         <div className={styles.buttonContainer}>
-          <button
+          {/* <button
             className={styles.enrollButton}
             onClick={() => alert('Enrolled Successfully!')}
           >
             Enroll Now
-          </button>
+          </button> */}
           <button
             className={styles.joinButton}
             onClick={() => setShowModal(true)}
           >
-            Join Us
+            Enroll Now
           </button>
         </div>
       </div>
@@ -171,6 +202,20 @@ const ProgramDetails = () => {
                   required
                 />
               </div>
+
+          <div className={styles.formGroup}>
+              <label htmlFor="programName" className={styles.label}>Program Name</label>
+            <input
+            type="text"
+           id="programName"
+           name="programName"
+           value={program.name || ''}
+           onClick={handleInputChange}
+           className={styles.input}
+           disabled
+           />
+         </div>
+
               <div className={styles.formActions}>
                 <button type="submit" className={styles.submitButton}>
                   Submit

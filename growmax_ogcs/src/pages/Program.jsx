@@ -27,7 +27,7 @@ import masteryInInterview from '../assets/masteryinterview.jpeg'
 import aceYouEngineering from '../assets/AceYourEnginnering.jpeg'
 import exclusiveTailored from '../assets/ExclusiveTailored.jpeg'
 import timeManagement from '../assets/timeManagement.jpeg'
-import { baseurl } from './api'
+import { baseurl } from '../api'
 
 
 const Programs = () => {

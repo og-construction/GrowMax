@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import styles from '../styles/ProgramDetail9.module.css';
+import { baseurl } from '../api'
 
 const ProgramDetail9 = () => {
   const location = useLocation();
@@ -10,7 +11,7 @@ const ProgramDetail9 = () => {
   const [currentTime, setCurrentTime] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({ name: '', mobile: '', email: '' });
-  const baseurl = 'https://yourapi.com'; // Replace with your API endpoint
+  //const baseurl = 'https://yourapi.com'; // Replace with your API endpoint
 
   // Set current date and time
   useEffect(() => {
@@ -46,7 +47,7 @@ const ProgramDetail9 = () => {
       }
     } catch (error) {
       console.error('Error registering for program:', error);
-      alert('An error occurred while registering. Please try again.');
+      alert('User already exists');
     }
   };
 
@@ -90,17 +91,17 @@ const ProgramDetail9 = () => {
 
         {/* Call-to-Action Buttons */}
         <div className={styles.buttonContainer}>
-          <button
+          {/* <button
             className={styles.enrollButton}
             onClick={() => alert('You have successfully enrolled!')}
           >
             Enroll Now
-          </button>
+          </button> */}
           <button
             className={styles.joinButton}
             onClick={() => setShowModal(true)}
           >
-            Join Us
+            Enroll Now
           </button>
         </div>
       </div>
@@ -147,6 +148,20 @@ const ProgramDetail9 = () => {
                   required
                 />
               </div>
+
+               <div className={styles.formGroup}>
+                            <label htmlFor="programName" className={styles.label}>Program Name</label>
+                          <input
+                          type="text"
+                         id="programName"
+                         name="programName"
+                         value={program9.name}
+                         onChange={handleInputChange}
+                         className={styles.input}
+                        disabled
+                         />
+                       </div>
+                       
               <div className={styles.formActions}>
                 <button type="submit" className={styles.submitButton}>
                   Submit

@@ -1,0 +1,272 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OGCS REGISTRATION</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            background-attachment: fixed;
+            margin: 0;
+            padding: 20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: -1;
+        }
+        table {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 80%;
+            margin: 20px auto;
+        }
+        td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], input[type="submit"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 12px;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        caption {
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        form {
+    width: 80%;
+    margin: 0 auto;
+}
+.form-title {
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 100%;
+}
+
+    </style>
+</head>
+<body>
+    <h1 class="form-title">OGCS REGISTRATION</h1>
+    <form method="POST" name="customerData" id="paymentForm" action="ccavRequestHandler.php">
+        <table>
+             
+            <tr>
+                <td>Parameter Name:</td><td>Parameter Value:</td>
+            </tr>
+            <tr>
+                <td colspan="2"><b>Compulsory information</b></td>
+            </tr>
+            <tr>
+                <td>TID:</td><td><input type="text" name="tid" id="tid" readonly /></td>
+            </tr>
+            <tr>
+                <td>Merchant Id:</td><td><input type="text" name="merchant_id" value="3041682" readonly/></td>
+            </tr>
+            <tr>
+                <td>Order Id:</td><td><input type="text" name="order_id" id="order_id" readonly/></td>
+            </tr>
+            <tr>
+                <td>Amount:</td><td><input type="text" name="amount" value="1.00"/></td>
+            </tr>
+            <tr>
+                <td>Currency:</td><td><input type="text" name="currency" value="INR" readonly/></td>
+            </tr>
+             
+            <tr>
+                <td>Language:</td><td><input type="text" name="language" value="EN" readonly/></td>
+            </tr>
+            <tr>
+                <td colspan="2"><b>Billing information:</b></td>
+            </tr>
+            <tr>
+                <td>Billing Name:</td><td><input type="text" name="billing_name" id="billing_name" required/></td>
+            </tr>
+            <tr>
+                <td>Billing Address:</td><td><input type="text" name="billing_address"  id="billing_address"/></td>
+            </tr>
+            <tr>
+                <td>Billing City:</td><td><input type="text" name="billing_city" id="billing_city"/></td>
+            </tr>
+            <tr>
+                <td>Billing State:</td><td><input type="text" name="billing_state" id="billing_state"/></td>
+            </tr>
+            <tr>
+                <td>Billing Zip:</td><td><input type="text" name="billing_zip"  id="billing_zip"/></td>
+            </tr>
+            <tr>
+                <td>Billing Country:</td><td><input type="text" name="billing_country" value="India"/></td>
+            </tr>
+            <tr>
+                <td>Billing Tel:</td><td><input type="tel" name="billing_tel" id="billing_tel" required/></td>
+            </tr>
+            <tr>
+                <td>Billing Email:</td><td><input type="email" name="billing_email" id="billing_email" required/></td>
+            </tr>
+ 
+            <tr>
+            </tr>
+            <tr> <td> Payment Option: </td> 
+                  <td> 
+                          <input class="payOption" type="radio" name="payment_option" value="OPTCRDC">Credit Card
+                          <input class="payOption" type="radio" name="payment_option" value="OPTDBCRD">Debit Card  <br/>
+                          <input class="payOption" type="radio" name="payment_option" value="OPTNBK">Net Banking 
+                          <input class="payOption" type="radio" name="payment_option" value="OPTCASHC">Cash Card <br/>
+                          <input class="payOption" type="radio" name="payment_option" value="OPTMOBP">Mobile Payments
+                          <input class="payOption" type="radio" name="payment_option" value="OPTEMI">EMI
+                   <input class="payOption" type="radio" name="payment_option" value="OPTWLT">Wallet
+                   </td>
+            </tr>
+            
+            <!-- EMI section start -->
+            
+            <tr >
+            <td  colspan="2">
+             <div id="emi_div" style="display: none">
+                <table border="1" width="100%">
+                <tr> <td colspan="2">EMI Section </td></tr>
+                <tr> <td> Emi plan id: </td>
+                   <td><input readonly="readonly" type="text" id="emi_plan_id"  name="emi_plan_id" value=""/> </td>
+                </tr>
+                <tr> <td> Emi tenure id: </td>
+                   <td><input readonly="readonly" type="text" id="emi_tenure_id" name="emi_tenure_id" value=""/>  </td>
+                </tr>
+                <tr><td>Pay Through</td>
+                    <td>
+                        <select name="emi_banks"  id="emi_banks">
+                        </select>
+                    </td>
+               </tr>
+               <tr><td colspan="2">
+                    <div id="emi_duration" class="span12">
+                       <span class="span12 content-text emiDetails">EMI Duration</span>
+                       <table id="emi_tbl" cellpadding="0" cellspacing="0" border="1" >
+                       </table> 
+                   </div>
+                   </td>
+               </tr>
+               <tr>
+                    <td id="processing_fee" colspan="2">
+                   </td>
+               </tr>
+               </table>
+           </div>
+           </td>
+           </tr>
+           <!-- EMI section end -->
+            
+            
+            <tr> <td> Card Type: </td>
+                <td><input type="text" id="card_type" name="card_type" value="" readonly="readonly"/></td>
+            </tr>
+           
+           <tr> <td> Card Name: </td>
+                <td> <select name="card_name" id="card_name"> <option value="">Select Card Name</option> </select> </td>
+           </tr>
+           
+           <tr> <td> Data Accepted At </td>
+                <td><input type="text" id="data_accept" name="data_accept" readonly="readonly"/></td>
+           </tr>
+            
+            <tr> <td> Card Number: </td>
+               <td> <input type="text" id="card_number" name="card_number" value=""/>e.g. 4111111111111111 </td>
+            </tr>
+             <tr> <td> Expiry Month: </td>
+                  <td> <input type="text" name="expiry_month" value=""/>e.g. 07 </td>
+            </tr>
+             <tr> <td> Expiry Year: </td>
+                    <td> <input type="text" name="expiry_year" value=""/>e.g. 2027</td>
+            </tr>
+             <tr> <td> CVV Number:</td>
+                  <td> <input type="text" name="cvv_number" value=""/>e.g. 328</td>
+            </tr>
+            <tr> <td> Issuing Bank:</td>
+               <td><input type="text" name="issuing_bank" value=""/>e.g. State Bank Of India</td>
+            </tr>
+        <tr> 
+           <td> Mobile Number:</td>
+                   <td><input type="text" name="mobile_number" value=""/>e.g. 9770707070</td>
+            </tr>
+       <tr> 
+           <td> MMID:</td>
+                   <td><input type="text" name="mm_id" value=""/>e.g. 1234567</td>
+            </tr>
+       <tr> 
+           <td> OTP:</td>
+                   <td><input type="text" name="otp" value=""/>e.g. 123456</td>
+            </tr>
+        <tr> 
+           <td> Promotions:</td>
+                   <td> <select name="promo_code" id="promo_code"> <option value="">All Promotions &amp; Offers</option> </select> </td>
+            </tr>
+            
+           <tr>
+               <td></td><td><INPUT TYPE="submit" value="CheckOut"></td>
+           </tr>
+ 
+            </tr>
+        </table>
+    </form>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            var d = new Date().getTime();
+            document.getElementById("tid").value = d;
+            document.getElementById("order_id").value = 'ORD' + Math.floor(Math.random() * 1000000000);
+
+            var userData = JSON.parse(localStorage.getItem('userData'));
+            if (userData) {
+                document.getElementById('billing_name').value = userData.name;
+                document.getElementById('billing_email').value = userData.email;
+                document.getElementById('billing_tel').value = userData.phone;
+            }
+        };
+
+        $(function(){
+            $("#paymentForm").submit(function(e) {
+                e.preventDefault();
+                
+                var formData = new FormData(this);
+                var object = {};
+                formData.forEach((value, key) => {object[key] = value});
+                var json = JSON.stringify(object);
+
+               
+                
+                
+            });
+        });
+    </script>
+</body>
+</html>

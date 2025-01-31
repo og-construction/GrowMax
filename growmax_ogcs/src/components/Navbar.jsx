@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../assets/growmaxlogo11.png';
+import OGCS_logo from '../assets/OGCS_logo.png';
 
 const Navbar = () => {
   return (
@@ -16,7 +17,7 @@ const Navbar = () => {
         <li><Link to="/about">About</Link></li>
         <li><Link to="/programs">Programs</Link></li>
         <li className="dropdown">
-          <span className="span">Event</span>
+          <span className="span">Event ▼</span>
           <ul className="dropdown-menu">
             <li><Link to="/event/upcoming">Upcoming Events</Link></li>
             <li><Link to="/event/completedevent">Completed Events</Link></li>
@@ -28,7 +29,7 @@ const Navbar = () => {
 
       <div className="navbar-logo">
         <Link to="/">
-          <img src={logo} alt="GrowMax Logo" />
+          <img src={OGCS_logo} alt="OGCS LOGO" />
         </Link>
       </div>
     </nav>

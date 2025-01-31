@@ -14,10 +14,17 @@ const UpcomingEvents = () => {
   const navigate = useNavigate();
 
   return (
-    <Box sx={{ minHeight: "100vh", bgcolor: "grey.100", p: 4 }}>
+    <Box sx={{ minHeight: "100vh", bgcolor: "grey.100", p: 4, mt: 10 }}> 
+      {/* ✅ Added mt: 10 to push content below navbar */}
+
       {/* Header Section */}
       <Box textAlign="center" mb={4}>
-        <Typography variant="h3" fontWeight="bold" color="text.primary" gutterBottom>
+        <Typography
+          variant="h3"
+          fontWeight="bold"
+          color="text.primary"
+          gutterBottom
+        >
           Upcoming Events
         </Typography>
         <Typography variant="subtitle1" color="text.secondary">
@@ -61,6 +68,7 @@ const UpcomingEvents = () => {
                   backgroundColor: "primary.main",
                   ":hover": { backgroundColor: "primary.dark" },
                 }}
+                onClick={() => navigate("/event-detail")}
               >
                 View More
               </Button>
