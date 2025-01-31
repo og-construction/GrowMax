@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import bookingImage from "../assets/booking.jpeg";
+import axios from "axios";
+import { baseurl } from '../api'
+
 import {
   TextField,
   Button,
@@ -30,33 +33,43 @@ const Booking = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Booking submitted successfully!");
-    setFormData({
-      eventType: "",
-      secondField: "",
-      name: "",
-      event: "",
-      attendees: "",
-      location: "",
-    });
+  
+    try {
+      const response = await axios.post(`${baseurl}/api/booking`, formData);
+      if (response.status === 201) {
+        alert('Booking submitted successfully!');
+        setFormData({
+          eventType: "",
+          secondField: "",
+          name: "",
+          event: "",
+          attendees: "",
+          location: "",
+        });
+      }
+    } catch (error) {
+      console.error('Error submitting booking:', error);
+      alert('Failed to submit booking. Please try again.');
+    }
   };
 
   return (
     <Box
       sx={{
-        height: "100vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundImage: `url(${bookingImage})`,
-
-          backgroundSize: "cover",  
-          backgroundPosition: "center", 
-          backgroundRepeat: "no-repeat",  
-    padding: 2,
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundImage: `url(${bookingImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        padding: "6rem 2rem",
+        marginTop: "80px", // Ensures content starts below navbar
+        position: "relative",
+        zIndex: 1,
       }}
     >
       <Paper
@@ -66,9 +79,9 @@ const Booking = () => {
           borderRadius: 8,
           maxWidth: 500,
           width: "90%",
-          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",  
-          backgroundColor: "rgba(255, 255, 255, 0.9)",  
-          backdropFilter: "blur(5px)",  
+          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+          backgroundColor: "rgba(255, 255, 255, 0.95)", // Improved background visibility
+          backdropFilter: "blur(6px)", // Soft blur effect
         }}
       >
         <Box textAlign="center" mb={3}>
@@ -142,6 +155,7 @@ const Booking = () => {
           <TextField
             label="Attendees"
             name="attendees"
+            type="number"
             variant="outlined"
             fullWidth
             margin="normal"
@@ -170,7 +184,7 @@ const Booking = () => {
               fontSize: "1rem",
               fontWeight: "bold",
               textTransform: "none",
-              background: "linear-gradient(to right, #6a11cb, #2575fc)", // Button gradient
+              background: "linear-gradient(to right, #6a11cb, #2575fc)",
               color: "#fff",
               ":hover": {
                 background: "linear-gradient(to right, #4c8bf5, #375cdc)",

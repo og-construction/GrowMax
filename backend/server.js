@@ -8,7 +8,7 @@ const userRouter = require('./router/userRouter');
 const eventsRouter = require('./router/events');
 const programsRouter = require('./router/programs');
 const enquiriesRouter = require('./router/enquiries');
-
+const bookingRoutes = require('./router/bookingRoutes');  
 const app = express();
 const PORT = process.env.PORT || 5001;
 
@@ -31,6 +31,8 @@ app.use(
 
 // Middleware
 app.use(bodyParser.json());
+app.use(express.json());
+
 
 app.get("/",(req,res)=>{
   res.send("growmax backend started")
@@ -40,6 +42,7 @@ app.use('/api/user', userRouter);
 app.use('/api/events', eventsRouter);
 app.use('/api/programs', programsRouter);
 app.use('/api/enquiries', enquiriesRouter);
+app.use('/api', bookingRoutes);
 
 // Initialize Database and Start Server
 connectDB().then(() => {

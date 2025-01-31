@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { baseurl } from './api';
+import { baseurl } from '../api';
 
 const ProgramDetail2 = () => {
   const { programId } = useParams();
@@ -84,12 +84,12 @@ const ProgramDetail2 = () => {
 
         {/* Call-to-Action Buttons */}
         <div className="flex justify-center space-x-6">
-          <button
+          {/* <button
             className="px-6 py-3 bg-blue-600 text-white font-bold rounded-lg shadow hover:bg-blue-700 transform hover:scale-105 transition-all duration-300"
             onClick={() => alert('Enrolled Successfully!')}
           >
             Enroll Now
-          </button>
+          </button> */}
           <button
             className="px-6 py-3 bg-gray-200 text-gray-800 font-bold rounded-lg shadow hover:bg-gray-300 transform hover:scale-105 transition-all duration-300"
             onClick={() => alert('Contact form or details')}
